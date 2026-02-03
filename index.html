@@ -2,26 +2,27 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>سيرفرنا - الرئيسية</title>
+<title>Respect Town</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header>
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  <h1>سيرفرنا</h1>
+  <h1>Respect Town</h1>
 </header>
 
+<!-- القائمة المنسدلة -->
+<div id="nav-overlay" onclick="closeMenu()"></div>
 <div id="nav" class="nav-menu">
   <a href="index.html">🏠 الرئيسية</a>
   <a href="rules.html">📜 القوانين</a>
-  <a href="https://discord.gg/ضع_رابطك_هنا" target="_blank">💬 ديسكورد</a>
+  <a href="https://discord.gg/rr-tt" target="_blank">💬 ديسكورد</a>
 </div>
 
+<!-- المحتوى -->
 <div class="container">
-  <h2>🔗 رابط السيرفر</h2>
-  <p>
-    <a href="https://discord.gg/rr-tt" target="_blank">اضغط هنا للانضمام</a>
-  </p>
+  <button class="discord-btn" onclick="window.open('https://discord.gg/ضع_رابطك_هنا','_blank')">Respect Town Discord</button>
 </div>
 
 <script src="script.js"></script>
