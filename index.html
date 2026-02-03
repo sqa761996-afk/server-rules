@@ -2,80 +2,120 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>قوانين سيرفر رسبكت تاون</title>
+<title>سيرفرنا</title>
 <style>
 body {
-  background: #0a0a0a;
-  color: #ffffff;
-  font-family: "Arial", sans-serif;
-  margin: 0;
-  padding: 0;
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#0a0a0a;
+  color:white;
 }
+
+/* الهيدر */
 header {
-  background: #1a1a1a;
-  padding: 20px;
-  border-bottom: 4px solid red;
-  display: flex;
-  align-items: center;
+  background:#1a1a1a;
+  padding:15px 20px;
+  display:flex;
   justify-content: space-between;
+  align-items:center;
+  border-bottom:4px solid red;
+  position: fixed;
+  width:100%;
+  top:0;
+  z-index:100;
 }
+
+/* عنوان الهيدر */
 header h1 {
-  margin: 0;
-  font-size: 2em;
-  color: #ff0000;
-  text-align: center;
-  flex: 1;
+  margin:0;
+  font-size:1.5em;
+  color:#ff0000;
 }
-/* زر أعلى يسار */
-.rule-btn {
-  background: #ff0000;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 0 rgba(255,0,0,0.5);
+
+/* زر الهامبرجر */
+.menu-btn {
+  font-size:1.8em;
+  cursor:pointer;
+  color:white;
 }
-.rule-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 10px rgba(255,0,0,0.7);
+
+/* القائمة المنسدلة */
+.nav-menu {
+  position: fixed;
+  top:0;
+  left:-250px;
+  width:250px;
+  height:100%;
+  background:#1a1a1a;
+  box-shadow:2px 0 10px rgba(0,0,0,0.5);
+  transition:0.3s;
+  padding-top:60px;
 }
-/* القوانين */
+
+.nav-menu a {
+  display:block;
+  padding:15px 20px;
+  color:white;
+  text-decoration:none;
+  border-bottom:1px solid #333;
+  transition:0.3s;
+}
+
+.nav-menu a:hover {
+  background:red;
+}
+
+/* Container المحتوى */
 .container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
+  max-width:800px;
+  margin:100px auto 40px auto; /* تحت الهيدر */
+  padding:0 20px;
 }
+
 .rule {
-  background: #1e1e1e;
-  border-left: 5px solid red;
-  padding: 15px;
-  margin-bottom: 15px;
-  font-size: 1.1em;
+  background:#1e1e1e;
+  border-left:5px solid red;
+  padding:15px;
+  margin-bottom:15px;
 }
 .rule span {
-  font-weight: bold;
-  margin-right: 10px;
+  font-weight:bold;
+  margin-right:10px;
 }
-/* الفوتر */
+
 footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  border-top: 2px solid #333;
-  color: #888;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+  border-top:2px solid #333;
+  color:#888;
 }
 </style>
 </head>
 <body>
 
 <header>
-  <a href="#container" class="rule-btn">📜 القوانين</a>
-  <h1>قوانين السيرفر</h1>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <h1>سيرفرنا</h1>
 </header>
 
-<div class="container" id="container">
+<!-- القائمة المنسدلة -->
+<div id="nav" class="nav-menu">
+  <a href="#home">🏠 الصفحة الرئيسية</a>
+  <a href="#rules">📜 القوانين</a>
+  <a href="https://discord.gg/yourdiscordlink" target="_blank">💬 ديسكورد</a>
+</div>
+
+<!-- الصفحة الرئيسية -->
+<div class="container" id="home">
+  <h2>مرحبا بك في سيرفرنا</h2>
+  <p>🔗 رابط السيرفر: <a href="#">https://discord.gg/rr-tt</a></p>
+  <p>💬 انضم لديسكورد: <a href="https://discord.gg/yourdiscordlink" target="_blank">اضغط هنا</a></p>
+</div>
+
+<!-- القوانين -->
+<div class="container" id="rules">
+  <h2>📜 قوانين السيرفر</h2>
   <div class="rule"><span>❌</span> ممنوع RDM / VDM</div>
   <div class="rule"><span>🎭</span> الالتزام بالرول بلاي (RolePlay)</div>
   <div class="rule"><span>🧠</span> ممنوع Meta Gaming</div>
@@ -88,6 +128,28 @@ footer {
 <footer>
   © 2026 سيرفرنا – جميع الحقوق محفوظة
 </footer>
+
+<script>
+function toggleMenu(){
+  let nav = document.getElementById('nav');
+  if(nav.style.left === "0px"){
+    nav.style.left = "-250px";
+  } else {
+    nav.style.left = "0px";
+  }
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+  anchor.addEventListener('click', function(e){
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior:'smooth'
+    });
+    toggleMenu(); // تغلق القائمة بعد الضغط
+  });
+});
+</script>
 
 </body>
 </html>
