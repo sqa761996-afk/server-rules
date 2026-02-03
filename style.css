@@ -1,12 +1,24 @@
+/* الجسم والخلفية */
 body {
   margin:0;
   font-family: Arial, sans-serif;
-  background:#0a0a0a;
+  background: linear-gradient(-45deg, #0a0a0a, #1a1a1a, #111, #222);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
   color:white;
   overflow-x:hidden;
 }
+
+/* أنيميشن الخلفية */
+@keyframes gradientBG {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+
+/* Header */
 header {
-  background:#1a1a1a;
+  background: rgba(26,26,26,0.95);
   padding:15px 20px;
   display:flex;
   justify-content: space-between;
@@ -16,11 +28,13 @@ header {
   width:100%;
   top:0;
   z-index:100;
+  backdrop-filter: blur(5px);
 }
 header h1 {
   margin:0;
   font-size:1.8em;
   color:#ff0000;
+  text-shadow: 0 0 8px #ff0000;
 }
 .menu-btn {
   font-size:2em;
@@ -40,12 +54,12 @@ header h1 {
   left:0;
   width:100%;
   height:100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.6);
   z-index:90;
   display:none;
 }
 
-/* القائمة المنسدلة */
+/* Nav Menu */
 .nav-menu {
   position: fixed;
   top:0;
@@ -53,14 +67,12 @@ header h1 {
   width:300px;
   height:100%;
   background: linear-gradient(180deg, #1a1a1a, #333);
-  box-shadow:2px 0 20px rgba(0,0,0,0.8);
-  transition:0.4s;
+  box-shadow:2px 0 30px rgba(0,0,0,0.9);
+  transition:0.5s;
   padding-top:60px;
   z-index:100;
 }
-.nav-menu.open {
-  left:0;
-}
+.nav-menu.open { left:0; }
 .nav-link {
   display:block;
   padding:20px;
@@ -71,51 +83,79 @@ header h1 {
   transform: translateX(-20px);
   animation: fadeSlide 0.4s forwards;
   animation-delay: var(--delay);
+  transition: 0.3s;
+}
+.nav-link:hover {
+  color:#ff5555;
+  transform: translateX(10px);
+  text-shadow:0 0 5px #ff0000;
 }
 .nav-link:nth-child(1) {--delay:0.1s;}
 .nav-link:nth-child(2) {--delay:0.2s;}
 .nav-link:nth-child(3) {--delay:0.3s;}
-.nav-link:hover {
-  background:red;
-  transform: translateX(5px);
+
+@keyframes fadeSlide {
+  to { opacity:1; transform: translateX(0); }
 }
 
-/* الصفحة الرئيسية */
+/* Container الرئيسي */
 .container {
   max-width:800px;
   margin:150px auto 40px auto;
   text-align:center;
   padding:0 20px;
-  animation: fadeInUp 0.8s forwards;
 }
+
+/* الصورة الرئيسية */
 .hero-image {
   max-width:90%;
   height:auto;
   border-radius:15px;
   margin-bottom:20px;
+  opacity:0;
+  transform: scale(0.95);
+  animation: imageFade 1s forwards;
 }
+@keyframes imageFade {
+  to { opacity:1; transform: scale(1); }
+}
+
+/* نص الترحيب */
 .welcome-text {
   font-size:2em;
   margin-bottom:10px;
+  color:#ff4444;
+  text-shadow:0 0 15px #ff0000;
+  opacity:0;
+  animation: fadeInUp 1s forwards 0.5s;
 }
 .welcome-subtext {
   font-size:1.3em;
   margin-bottom:25px;
+  opacity:0;
+  animation: fadeInUp 1s forwards 0.8s;
 }
+
+@keyframes fadeInUp {
+  to { opacity:1; transform: translateY(0); }
+}
+
+/* زر الديسكورد */
 .discord-btn {
   background:#ff0000;
   color:white;
   border:none;
-  padding:20px 50px;
-  font-size:1.5em;
+  padding:22px 55px;
+  font-size:1.6em;
   font-weight:bold;
-  border-radius:15px;
+  border-radius:20px;
   cursor:pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.5s, text-shadow 0.5s;
 }
 .discord-btn:hover {
   transform: translateY(-5px);
-  box-shadow:0 0 25px rgba(255,0,0,0.7);
+  box-shadow:0 0 30px rgba(255,0,0,0.8);
+  text-shadow:0 0 15px #ff5555;
 }
 
 /* القوانين */
@@ -123,62 +163,50 @@ header h1 {
   font-size:2em;
   text-align:center;
   margin-bottom:30px;
+  color:#ff4444;
+  text-shadow:0 0 8px #ff0000;
+  opacity:0;
+  animation: fadeInUp 1s forwards 0.5s;
 }
 .rule-card {
-  background:#1e1e1e;
+  background: rgba(30,30,30,0.9);
   border-left:5px solid red;
   padding:20px;
   margin-bottom:20px;
   border-radius:10px;
-  box-shadow:0 0 10px rgba(0,0,0,0.5);
+  box-shadow:0 0 15px rgba(0,0,0,0.7);
   font-size:1.2em;
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeCard 0.6s forwards;
+  animation-delay: var(--delay);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .rule-card:hover {
   transform: translateY(-5px);
-  box-shadow:0 0 20px rgba(255,0,0,0.7);
+  box-shadow:0 0 25px rgba(255,0,0,0.8);
 }
-.rule-card span {
-  font-weight:bold;
-  margin-right:10px;
-}
+.rule-card span { font-weight:bold; margin-right:10px; }
 
-@keyframes fadeInUp {
-  to {
-    opacity:1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeSlide {
-  to {
-    opacity:1;
-    transform: translateX(0);
-  }
+.rule-card:nth-child(1) {--delay:0.6s;}
+.rule-card:nth-child(2) {--delay:0.8s;}
+.rule-card:nth-child(3) {--delay:1s;}
+.rule-card:nth-child(4) {--delay:1.2s;}
+.rule-card:nth-child(5) {--delay:1.4s;}
+.rule-card:nth-child(6) {--delay:1.6s;}
+.rule-card:nth-child(7) {--delay:1.8s;}
+
+@keyframes fadeCard {
+  to { opacity:1; transform: translateY(0); }
 }
 
 /* استجابة الجوال */
 @media (max-width:600px){
-  .welcome-text {
-    font-size:1.6em;
-  }
-  .welcome-subtext {
-    font-size:1.1em;
-  }
-  .discord-btn {
-    font-size:1.2em;
-    padding:15px 30px;
-  }
-  .rules-header {
-    font-size:1.5em;
-  }
-  .rule-card {
-    font-size:1em;
-    padding:15px;
-  }
-  header h1 {
-    font-size:1.5em;
-  }
-  .menu-btn {
-    font-size:1.6em;
-  }
+  .welcome-text { font-size:1.6em; }
+  .welcome-subtext { font-size:1.1em; }
+  .discord-btn { font-size:1.3em; padding:15px 35px; }
+  .rules-header { font-size:1.5em; }
+  .rule-card { font-size:1em; padding:15px; }
+  header h1 { font-size:1.5em; }
+  .menu-btn { font-size:1.6em; }
 }
