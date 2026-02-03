@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>قوانين سيرفرنا</title>
+<title>قوانين سيرفر رسبكت تاون</title>
 <style>
 body {
   background: #0a0a0a;
@@ -14,14 +14,34 @@ body {
 header {
   background: #1a1a1a;
   padding: 20px;
-  text-align: center;
   border-bottom: 4px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 header h1 {
   margin: 0;
   font-size: 2em;
   color: #ff0000;
+  text-align: center;
+  flex: 1;
 }
+/* زر أعلى يسار */
+.rule-btn {
+  background: #ff0000;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 rgba(255,0,0,0.5);
+}
+.rule-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 10px rgba(255,0,0,0.7);
+}
+/* القوانين */
 .container {
   max-width: 800px;
   margin: 40px auto;
@@ -38,6 +58,7 @@ header h1 {
   font-weight: bold;
   margin-right: 10px;
 }
+/* الفوتر */
 footer {
   text-align: center;
   padding: 20px;
@@ -50,10 +71,11 @@ footer {
 <body>
 
 <header>
-  <h1>📜 قوانين السيرفر</h1>
+  <a href="#container" class="rule-btn">📜 القوانين</a>
+  <h1>قوانين السيرفر</h1>
 </header>
 
-<div class="container">
+<div class="container" id="container">
   <div class="rule"><span>❌</span> ممنوع RDM / VDM</div>
   <div class="rule"><span>🎭</span> الالتزام بالرول بلاي (RolePlay)</div>
   <div class="rule"><span>🧠</span> ممنوع Meta Gaming</div>
