@@ -1,15 +1,15 @@
+const nav = document.getElementById('nav');
+const overlay = document.getElementById('nav-overlay');
+const menuBtn = document.getElementById('menu-btn');
+
 function toggleMenu(){
-  let nav = document.getElementById('nav');
-  let overlay = document.getElementById('nav-overlay');
-  if(nav.style.left === "0px"){
-    nav.style.left = "-300px";
-    overlay.style.display = "none";
-  } else {
-    nav.style.left = "0px";
-    overlay.style.display = "block";
-  }
+  nav.classList.toggle('open');
+  overlay.style.display = nav.classList.contains('open') ? 'block' : 'none';
+  menuBtn.classList.toggle('open');
 }
+
 function closeMenu(){
-  document.getElementById('nav').style.left = "-300px";
-  document.getElementById('nav-overlay').style.display = "none";
+  nav.classList.remove('open');
+  overlay.style.display = "none";
+  menuBtn.classList.remove('open');
 }
