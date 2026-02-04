@@ -1,1 +1,220 @@
-/* CSS كامل مثل ما شرحنا مسبقًا */
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#0b0b0b;
+  color:white;
+}
+
+header {
+  background:#111;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:4px solid red;
+}
+
+.menu-btn {
+  font-size:2em;
+  cursor:pointer;
+  transition:0.3s;
+}
+.menu-btn:hover {
+  color:red;
+}
+
+.nav-menu {
+  position:fixed;
+  top:0;
+  left:-260px;
+  width:260px;
+  height:100%;
+  background:#111;
+  transition:0.4s ease;
+  padding-top:70px;
+  z-index:100;
+}
+.nav-menu.open {
+  left:0;
+}
+
+.nav-link {
+  display:block;
+  padding:15px;
+  color:white;
+  text-decoration:none;
+  font-size:1.2em;
+  transition:0.3s;
+}
+.nav-link:hover {
+  background:red;
+}
+
+#nav-overlay {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display:none;
+  background:rgba(0,0,0,0.6);
+  z-index:90;
+}
+
+.container {
+  text-align:center;
+  margin-top:120px;
+  padding:20px;
+}
+
+.hero-image {
+  max-width:90%;
+  border-radius:15px;
+  opacity:0;
+  transform: translateY(30px);
+  animation: fadeSlide 1s forwards;
+}
+
+.welcome-text {
+  font-size:1.8em;
+  color:red;
+  margin-top:20px;
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeSlide 1s forwards 0.5s;
+}
+
+.welcome-subtext {
+  font-size:1.2em;
+  margin-top:10px;
+  color:#ccc;
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeSlide 1s forwards 1s;
+}
+
+.section-title {
+  margin-top:40px;
+  margin-bottom:20px;
+  color:red;
+  font-size:1.6em;
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeSlide 1s forwards 1.5s;
+}
+
+.cards {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:30px;
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeSlide 1s forwards 2s;
+}
+
+.user-card {
+  background:#111;
+  padding:20px;
+  border-radius:20px;
+  width:180px;
+  text-align:center;
+  box-shadow:0 0 15px rgba(0,0,0,0.7);
+  transition:0.4s;
+}
+.user-card:hover {
+  transform: translateY(-10px);
+  box-shadow:0 0 30px red;
+}
+
+.avatar {
+  width:110px;
+  height:110px;
+  margin:0 auto 15px auto;
+  border-radius:50%;
+  overflow:hidden;
+  border:4px solid red;
+}
+.avatar img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.user-card span {
+  display:block;
+  font-size:1.1em;
+  margin-bottom:5px;
+}
+
+.user-card small {
+  color:#aaa;
+  font-size:0.9em;
+}
+
+.discord-btn {
+  display:inline-block;
+  background:red;
+  color:white;
+  padding:15px 50px;
+  font-size:1.4em;
+  border-radius:20px;
+  text-decoration:none;
+  margin:20px 0;
+  transition:0.3s;
+}
+.discord-btn:hover {
+  transform:translateY(-5px) scale(1.05);
+  box-shadow:0 0 30px red;
+}
+
+.discord-widget {
+  width:100%;
+  max-width:350px;
+  height:400px;
+  margin:0 auto;
+  border-radius:15px;
+  border:none;
+  overflow:hidden;
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeSlide 1s forwards 2.5s;
+}
+
+.member-count {
+  font-size:1.2em;
+  margin:15px 0;
+  color:#fff;
+}
+
+.rule-card {
+  background:#111;
+  border-left:4px solid red;
+  padding:15px 20px;
+  margin:15px auto;
+  border-radius:10px;
+  max-width:600px;
+  font-size:1.1em;
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeSlide 0.6s forwards;
+}
+.rule-card:nth-child(1){animation-delay:0.2s;}
+.rule-card:nth-child(2){animation-delay:0.4s;}
+.rule-card:nth-child(3){animation-delay:0.6s;}
+.rule-card:nth-child(4){animation-delay:0.8s;}
+.rule-card:nth-child(5){animation-delay:1s;}
+
+@keyframes fadeSlide {
+  from {opacity:0; transform:translateY(30px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+/* Responsive */
+@media (max-width:600px){
+  .welcome-text { font-size:1.4em; }
+  .welcome-subtext { font-size:1em; }
+  .user-card { width:140px; padding:15px; }
+  .avatar { width:80px; height:80px; }
+  .discord-btn { padding:10px 30px; font-size:1.2em; }
+}
