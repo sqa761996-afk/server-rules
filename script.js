@@ -1,3 +1,4 @@
+// ======= قائمة الثلاث خطوط =======
 function toggleMenu(){
   const menu = document.getElementById('navMenu');
   const overlay = document.getElementById('nav-overlay');
@@ -5,13 +6,32 @@ function toggleMenu(){
   overlay.style.display = menu.classList.contains('open') ? 'block' : 'none';
 }
 
-// تحديث عدد الأعضاء (Live member count)
+// ======= عداد أعضاء الدسكورد =======
 const memberCountSpan = document.getElementById('memberCount');
 if(memberCountSpan){
   fetch("https://discord.com/api/v10/guilds/1453314826322317366/widget.json")
-    .then(res => res.json())
+    .then(res => {
+      if(!res.ok) throw new Error("API error");
+      return res.json();
+    })
     .then(data => {
       memberCountSpan.textContent = data.presence_count;
     })
-    .catch(err => console.log("Discord API error:", err));
+    .catch(err => {
+      console.log("Discord API error:", err);
+      memberCountSpan.textContent = "غير متاح";
+    });
 }
+
+// ======= Animations إضافية (اختياري) =======
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".user-card, .rule-card, .hero-image, .welcome-text, .welcome-subtext, .discord-widget");
+  cards.forEach((el, i) => {
+    el.style.opacity = 0;
+    setTimeout(() => {
+      el.style.opacity = 1;
+      el.style.transform = "translateY(0)";
+      el.style.transition = "all 0.8s ease";
+    }, 200 * i);
+  });
+});
