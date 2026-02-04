@@ -1,238 +1,125 @@
-/* ======= عام ======= */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  margin:0;
-  font-family: "Arial", sans-serif;
-  background:#0b0b0b;
-  color:white;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #0e0e0e;
+  color: #eee;
 }
 
-header {
-  background:#111;
-  padding:18px 25px;
-  display:flex;
-  justify-content:flex-start;
-  align-items:center;
-  border-bottom:4px solid #ff0000;
-  position:fixed;
-  width:100%;
-  top:0;
-  z-index:200;
+.header {
+  height: 64px;
+  background: #111;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 2px solid #c62828;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
 }
 
-h1 {
-  font-size:2em;
-  color:#ff0000;
-  margin:0 0 0 20px;
+.burger {
+  font-size: 24px;
+  background: none;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-/* زر الثلاث خطوط */
-.menu-btn {
-  font-size:3em;
-  cursor:pointer;
-  color:white;
-  transition:0.3s;
-  padding:15px;
-  border:2px solid #ff0000;
-  border-radius:12px;
-}
-.menu-btn:hover {
-  color:#ff4d4d;
-  transform:scale(1.1);
+.logo {
+  margin-left: 14px;
+  font-size: 18px;
+  color: #c62828;
 }
 
-/* ======= القائمة الجانبية ======= */
-.nav-menu {
-  position:fixed;
-  top:0;
-  right:-320px;
-  width:320px;
-  height:100%;
-  background:#111;
-  transition:0.4s ease;
-  padding-top:100px;
-  z-index:250;
-  box-shadow:-5px 0 15px rgba(0,0,0,0.6);
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -280px;
+  width: 280px;
+  height: 100%;
+  background: #111;
+  padding-top: 80px;
+  transition: 0.3s;
+  z-index: 20;
 }
-.nav-menu.open { right:0; }
 
-.nav-link {
-  display:block;
-  padding:25px 30px;
-  color:white;
-  text-decoration:none;
-  font-size:2em;
-  border-bottom:1px solid #fff;
-  margin:0 12px;
-  transition:0.3s;
+.side-menu a {
+  display: block;
+  padding: 16px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #333;
 }
-.nav-link:hover { background:#ff0000; }
+
+.side-menu.open {
+  right: 0;
+}
 
 .close-btn {
-  position:absolute;
-  top:20px;
-  left:20px;
-  font-size:2.5em;
-  cursor:pointer;
-  color:white;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
 }
 
-/* ======= Overlay عند فتح القائمة ======= */
-#nav-overlay {
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  display:none;
-  background:rgba(0,0,0,0.7);
-  z-index:200;
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  z-index: 15;
 }
 
-/* ======= محتوى ======= */
-.container {
-  text-align:center;
-  margin-top:150px;
-  padding:25px;
-  max-width:1200px;
-  margin-left:auto;
-  margin-right:auto;
+.overlay.show {
+  display: block;
 }
 
-/* ======= الصور ======= */
-.hero-image {
-  max-width:95%;
-  border-radius:18px;
+.content {
+  padding: 100px 20px 40px;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
 }
 
-/* ======= الترحيب ======= */
-.welcome-text {
-  font-size:2.5em;
-  color:#ff0000;
-  margin-top:30px;
+.hero {
+  max-width: 100%;
+  border-radius: 16px;
 }
 
-.welcome-subtext {
-  font-size:1.5em;
-  margin-top:18px;
-  color:#ccc;
+.team {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
-/* ======= عناوين الأقسام ======= */
-.section-title {
-  margin-top:50px;
-  margin-bottom:25px;
-  color:#ff0000;
-  font-size:2em;
+.card {
+  width: 160px;
 }
 
-/* ======= بطاقات المستخدمين ======= */
-.cards {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:35px;
+.card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.user-card {
-  background:#111;
-  padding:20px;
-  border-radius:20px;
-  width:180px;
-  text-align:center;
-  box-shadow:0 0 22px rgba(0,0,0,0.7);
-  transition:0.4s;
-}
-.user-card:hover {
-  transform: translateY(-8px);
-  box-shadow:0 0 40px #ff0000;
-}
-
-.avatar {
-  width:120px;
-  height:120px;
-  margin:0 auto 12px auto;
-  border-radius:50%;
-  overflow:hidden;
-  border:3px solid #ff0000;
-}
-.avatar img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.user-card span {
-  display:block;
-  font-size:1.25em;
-  margin-bottom:6px;
-  color:white;
-}
-
-.user-card small {
-  color:#aaa;
-  font-size:1em;
-}
-
-/* ======= زر الدسكورد ======= */
 .discord-btn {
-  display:inline-block;
-  background:#ff0000;
-  color:white !important;
-  padding:18px 50px;
-  font-size:1.5em;
-  border-radius:28px;
-  text-decoration:none;
-  margin:25px 0;
-  transition:0.3s;
-  border:2px solid #ff4d4d;
-  box-shadow:0 0 25px rgba(255,0,0,0.6);
-}
-.discord-btn:hover {
-  transform:translateY(-5px) scale(1.08);
-  box-shadow:0 0 50px #ff0000;
-  background:#ff4d4d;
-}
-
-/* ======= ويدجت الدسكورد ======= */
-.discord-widget {
-  width:100%;
-  max-width:400px;
-  height:450px;
-  margin:0 auto;
-  border-radius:20px;
-  border:none;
-  overflow:hidden;
-}
-
-/* ======= عداد الأعضاء ======= */
-.member-count {
-  font-size:1.5em;
-  margin:20px 0;
-  color:white;
-}
-
-/* ======= القوانين ======= */
-.rule-card {
-  background: rgba(17,17,17,0.95);
-  padding:22px 28px;
-  margin:20px auto;
-  border-radius:15px;
-  max-width:750px;
-  font-size:1.25em;
-  line-height:1.7em;
-  color:#fff;
-  box-shadow: 0 0 22px rgba(0,0,0,0.5);
-}
-
-/* ======= Responsive للجوال ======= */
-@media (max-width:600px){
-  .welcome-text { font-size:2em; }
-  .welcome-subtext { font-size:1.2em; }
-  .user-card { width:140px; padding:18px; }
-  .avatar { width:100px; height:100px; }
-  .discord-btn { padding:14px 40px; font-size:1.3em; }
-  .rule-card { font-size:1.1em; padding:18px 22px; }
-  h1 { font-size:1.7em; }
-  .menu-btn { font-size:2.5em; padding:8px; }
-  .nav-link { font-size:1.5em; padding:18px 20px; }
+  display: inline-block;
+  margin-top: 30px;
+  background: #c62828;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
 }
