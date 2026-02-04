@@ -26,17 +26,3 @@ if(memberCountSpan){
       memberCountSpan.textContent = "غير متاح";
     });
 }
-
-// ======= Animations سلسة =======
-document.addEventListener("DOMContentLoaded", () => {
-  const animatedElements = document.querySelectorAll(".user-card, .rule-card, .hero-image, .welcome-text, .welcome-subtext, .discord-widget, .discord-btn");
-  animatedElements.forEach((el, i) => {
-    el.style.opacity = 0;
-    el.style.transform = "translateY(15px)";
-    setTimeout(() => {
-      el.style.opacity = 1;
-      el.style.transform = "translateY(0)";
-      el.style.transition = "all 0.6s ease";
-    }, 150 * i);
-  });
-});
