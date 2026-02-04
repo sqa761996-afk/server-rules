@@ -2,67 +2,74 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>Respect Town | الرئيسية</title>
+  <title>Respect Town | القوانين</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-  <div class="menu-btn" id="menuBtn">☰</div>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
   <h1>Respect Town</h1>
 </header>
 
-<div id="nav-overlay" onclick="toggleMenu()"></div>
+<div id="nav-overlay"></div>
+
 <nav class="nav-menu" id="navMenu">
-  <div class="close-btn" onclick="toggleMenu()">×</div>
   <a href="index.html" class="nav-link">القوانين</a>
   <a href="home.html" class="nav-link">الصفحة الرئيسية</a>
   <a href="discord.html" class="nav-link">سيرفر الدسكورد</a>
 </nav>
 
 <div class="container">
-  <img src="assets/images/IMG_1638.png" class="hero-image">
+  <h2 class="page-title">قوانين السيرفر</h2>
 
-  <div class="welcome-text">
-    رسبكت تاون
-  </div>
-  <div class="welcome-subtext">
-    افضل سيرفر رول بلاي عربي وواقعي، اختر طريقك وكن من يحقق العدالة أو من يفرض قوانينه
+  <div class="rule-card">
+    <h3>قوانين الحياة الجديدة - RB</h3>
+    <p>في حال تم إسقاط شخص بالكامل أو فقدان وعيه لا يستطيع الكلام، الحركة، أو القيام بأي فعل. إذا تم إنعاشه من قبل مسعفين يمكنه تذكر الأحداث. في حال استخدام إبرة "في العيادة الخاصة" من لاعب لديه عداوة معك، لا يمكنك تذكر أي أحداث سابقة بما فيها العداوات أو النزاعات.</p>
   </div>
 
-  <h2 class="section-title">Owners</h2>
-  <div class="cards">
-    <div class="user-card">
-      <div class="avatar">
-        <img src="assets/images/97983596d1c7dccfaf3994c95c31a08b.webp">
-      </div>
-      <span>nawaf3mk</span>
-      <small>Server Owner</small>
-    </div>
-    <div class="user-card">
-      <div class="avatar">
-        <img src="assets/images/6c18868467a731b3b202cf61bc35d2f4.webp">
-      </div>
-      <span>5zym0</span>
-      <small>Server Owner</small>
-    </div>
-    <div class="user-card">
-      <div class="avatar">
-        <img src="assets/images/f47db0bf65b178c6fbd7ac651a078fd9.webp">
-      </div>
-      <span>3f.rt</span>
-      <small>Server Owner</small>
-    </div>
+  <div class="rule-card">
+    <h3>الباور جيمنج - PowerGaming</h3>
+    <p>استخدام وسائل غير موجودة في اللعبة للحصول على ميزة أو لتجاوز قوانين العالم الواقعية. أمثلة: القدرة على فتح أقفال بدون مفاتيح، أو تنفيذ حركات قتالية خارقة لا تتوافق مع اللعبة. كل تصرف مشابه يعتبر مخالفة.</p>
   </div>
 
-  <h2 class="section-title">Website Developer</h2>
-  <div class="cards">
-    <div class="user-card">
-      <div class="avatar">
-        <img src="assets/images/65e0c44b6f3ee4638f4c1c1020071a1d.webp">
-      </div>
-      <span>.4ba7</span>
-      <small>Website Developer</small>
-    </div>
+  <div class="rule-card">
+    <h3>الخوف على الحياة - NVL (No Violence Life)</h3>
+    <p>عدم إظهار الخوف بشكل واقعي عند التهديد بالأسلحة أو التعرض للخطر يعتبر مخالف. يجب أن يكون الخوف على الحياة حقيقي، بما يعكس ردة فعل طبيعية أمام الخطر.</p>
+  </div>
+
+  <div class="rule-card">
+    <h3>الميتا جيمنج - Metagaming</h3>
+    <p>استخدام معلومات حصلت عليها من خارج اللعبة (مثلاً من بث مباشر، ديسكورد، يوتيوب) داخل اللعبة يعتبر مخالفة. المعلومات يجب أن تكون متوفرة فقط لشخصيتك داخل اللعبة.</p>
+  </div>
+
+  <div class="rule-card">
+    <h3>القتل العشوائي - RDM (Random Death Match)</h3>
+    <p>قتل الأشخاص بلا سبب أو تهديد مسبق، أو بطريقة عشوائية، يعتبر مخالفة واضحة. يجب احترام حياة الشخصيات الأخرى في اللعبة.</p>
+  </div>
+
+  <div class="rule-card">
+    <h3>قانون تقدير الحياة - NWL (New World Life)</h3>
+    <p>الحفاظ على حياتك وحياة الآخرين واجب أساسي. لا تهدد أو تستهين بحياة الآخرين. لا تقاوم مجرم أو شرطي مسلح إلا عند الضرورة. يجب التفاوض وحل النزاعات بالكلام قبل أي عمل يعرض حياة الآخرين للخطر.</p>
+  </div>
+
+  <div class="rule-card">
+    <h3>الاتفاقيات خارج الرول بلاي</h3>
+    <p>أي اتفاق يتم خارج اللعبة (مثل الديسكورد أو خارجه) لتسهيل أحداث داخل اللعبة يعتبر مخالف ويمنع تطبيقه.</p>
+  </div>
+
+  <div class="rule-card">
+    <h3>الإهانة للشخص المسقط</h3>
+    <p>يمنع تمامًا إهانة أي لاعب تم إسقاطه أو فقد وعيه خلال اللعبة. الاحترام واجب دائمًا.</p>
+  </div>
+
+  <div class="rule-card">
+    <h3>بناء شخصية حقيقية - Roleplay Character</h3>
+    <p>يجب على كل لاعب بناء شخصية فريدة له، وتمثيلها بجدية في الأقوال والأفعال داخل اللعبة، مع الالتزام بالواقعية والخيال المنطقي.</p>
+  </div>
+
+  <div class="rule-card">
+    <h3>ملفات أو أدوات مضرة باللعب</h3>
+    <p>يحظر استخدام أي ملفات أو أدوات تؤثر سلبًا على اللعب أو تمنح ميزات غير قانونية. كل استخدام يعتبر مخالفة ويعاقب عليها النظام.</p>
   </div>
 </div>
 
