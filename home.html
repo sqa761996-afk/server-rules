@@ -6,41 +6,65 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header class="header">
-  <button class="burger" onclick="openMenu()">☰</button>
-  <span class="logo">Respect Town</span>
+<header>
+  <div class="menu-btn" id="menuBtn">☰</div>
+  <h1>Respect Town</h1>
 </header>
 
-<div class="overlay" onclick="closeMenu()"></div>
-
-<nav class="side-menu">
-  <button class="close-btn" onclick="closeMenu()">✕</button>
-  <a href="index.html">القوانين</a>
-  <a href="home.html">الصفحة الرئيسية</a>
-  <a href="discord.html">سيرفر الدسكورد</a>
+<div id="nav-overlay" onclick="toggleMenu()"></div>
+<nav class="nav-menu" id="navMenu">
+  <div class="close-btn" onclick="toggleMenu()">×</div>
+  <a href="index.html" class="nav-link">القوانين</a>
+  <a href="home.html" class="nav-link">الصفحة الرئيسية</a>
+  <a href="discord.html" class="nav-link">سيرفر الدسكورد</a>
 </nav>
 
-<main class="content">
+<div class="container">
+  <img src="assets/images/IMG_1638.png" class="hero-image">
 
-  <img src="assets/images/server.png" class="hero">
-
-  <h1 class="welcome">رسبكت تاون</h1>
-  <p class="subtitle">أفضل سيرفر رول بلاي عربي واقعي</p>
+  <div class="welcome-text">
+    رسبكت تاون
+  </div>
+  <div class="welcome-subtext">
+    افضل سيرفر رول بلاي عربي وواقعي، اختر طريقك وكن من يحقق العدالة أو من يفرض قوانينه
+  </div>
 
   <h2 class="section-title">Owners</h2>
-  <div class="team">
-    <div class="card"><img src="assets/images/owner1.png"><span>nawaf3mk</span></div>
-    <div class="card"><img src="assets/images/owner2.png"><span>5zym0</span></div>
-    <div class="card"><img src="assets/images/owner3.png"><span>3f.rt</span></div>
+  <div class="cards">
+    <div class="user-card">
+      <div class="avatar">
+        <img src="assets/images/97983596d1c7dccfaf3994c95c31a08b.webp">
+      </div>
+      <span>nawaf3mk</span>
+      <small>Server Owner</small>
+    </div>
+    <div class="user-card">
+      <div class="avatar">
+        <img src="assets/images/6c18868467a731b3b202cf61bc35d2f4.webp">
+      </div>
+      <span>5zym0</span>
+      <small>Server Owner</small>
+    </div>
+    <div class="user-card">
+      <div class="avatar">
+        <img src="assets/images/f47db0bf65b178c6fbd7ac651a078fd9.webp">
+      </div>
+      <span>3f.rt</span>
+      <small>Server Owner</small>
+    </div>
   </div>
 
   <h2 class="section-title">Website Developer</h2>
-  <div class="team">
-    <div class="card"><img src="assets/images/dev.png"><span>.4ba7</span></div>
+  <div class="cards">
+    <div class="user-card">
+      <div class="avatar">
+        <img src="assets/images/65e0c44b6f3ee4638f4c1c1020071a1d.webp">
+      </div>
+      <span>.4ba7</span>
+      <small>Website Developer</small>
+    </div>
   </div>
-
-</main>
+</div>
 
 <script src="script.js"></script>
 </body>
