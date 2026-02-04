@@ -1,6 +1,6 @@
 body {
   margin:0;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   background:#0b0b0b;
   color:white;
 }
@@ -17,6 +17,10 @@ header {
 .menu-btn {
   font-size:2em;
   cursor:pointer;
+  transition:0.3s;
+}
+.menu-btn:hover {
+  color:red;
 }
 
 .nav-menu {
@@ -26,7 +30,7 @@ header {
   width:260px;
   height:100%;
   background:#111;
-  transition:0.3s;
+  transition:0.4s ease;
   padding-top:70px;
   z-index:100;
 }
@@ -39,6 +43,8 @@ header {
   padding:15px;
   color:white;
   text-decoration:none;
+  font-size:1.2em;
+  transition:0.3s;
 }
 .nav-link:hover {
   background:red;
@@ -64,21 +70,27 @@ header {
 .hero-image {
   max-width:90%;
   border-radius:15px;
-  animation: fadeIn 1s forwards;
+  opacity:0;
+  transform: translateY(30px);
+  animation: fadeSlide 1s forwards;
 }
 
 .welcome-text {
   font-size:1.8em;
   color:red;
   margin-top:20px;
-  animation: fadeIn 1.5s forwards;
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeSlide 1s forwards 0.5s;
 }
 
 .welcome-subtext {
   font-size:1.2em;
   margin-top:10px;
   color:#ccc;
-  animation: fadeIn 2s forwards;
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeSlide 1s forwards 1s;
 }
 
 .section-title {
@@ -86,6 +98,9 @@ header {
   margin-bottom:20px;
   color:red;
   font-size:1.6em;
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeSlide 1s forwards 1.5s;
 }
 
 .cards {
@@ -93,6 +108,9 @@ header {
   justify-content:center;
   flex-wrap:wrap;
   gap:30px;
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeSlide 1s forwards 2s;
 }
 
 .user-card {
@@ -102,11 +120,11 @@ header {
   width:180px;
   text-align:center;
   box-shadow:0 0 15px rgba(0,0,0,0.7);
-  transition:0.3s;
+  transition:0.4s;
 }
 .user-card:hover {
-  transform: translateY(-8px);
-  box-shadow:0 0 25px red;
+  transform: translateY(-10px);
+  box-shadow:0 0 30px red;
 }
 
 .avatar {
@@ -146,8 +164,8 @@ header {
   transition:0.3s;
 }
 .discord-btn:hover {
-  transform:translateY(-5px);
-  box-shadow:0 0 25px red;
+  transform:translateY(-5px) scale(1.05);
+  box-shadow:0 0 30px red;
 }
 
 .discord-widget {
@@ -158,14 +176,17 @@ header {
   border-radius:15px;
   border:none;
   overflow:hidden;
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeSlide 1s forwards 2.5s;
 }
 
-@keyframes fadeIn {
-  from {opacity:0;}
-  to {opacity:1;}
+@keyframes fadeSlide {
+  from {opacity:0; transform:translateY(30px);}
+  to {opacity:1; transform:translateY(0);}
 }
 
-/* Responsive للجوال */
+/* Responsive */
 @media (max-width:600px){
   .welcome-text { font-size:1.4em; }
   .welcome-subtext { font-size:1em; }
