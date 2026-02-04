@@ -16,30 +16,27 @@ header {
   position:fixed;
   width:100%;
   top:0;
-  z-index:450;
+  z-index:200;
 }
 
 h1 {
   font-size:2em;
   color:#ff0000;
   margin:0 0 0 20px;
-  position:relative;
-  z-index:450;
 }
 
 .menu-btn {
-  font-size:4em;
+  font-size:3em;
   cursor:pointer;
   color:white;
   transition:0.3s;
-  padding:10px;
-  border:3px solid #ff0000;
-  border-radius:12px;
-  position:relative;
-  z-index:450;
+  padding:12px;
+  border:2px solid #ff0000;
+  border-radius:8px;
 }
 .menu-btn:hover {
-  color:#ff0000;
+  color:#ff4d4d;
+  box-shadow:0 0 15px #ff0000;
 }
 
 /* ======= القائمة الجانبية ======= */
@@ -51,40 +48,37 @@ h1 {
   height:100%;
   background:#111;
   transition:0.4s ease;
-  padding-top:60px;
-  z-index:500;
+  padding-top:90px;
+  z-index:300;
   box-shadow:-5px 0 15px rgba(0,0,0,0.6);
 }
-
 .nav-menu.open {
   right:0;
 }
-
 .nav-link {
   display:block;
-  padding:25px 30px;
+  padding:30px 25px;
   color:white;
   text-decoration:none;
-  font-size:2.2em;
-  border-bottom:1px solid #fff;
+  font-size:1.8em;
+  border-bottom:1px solid #555;
+  margin:0 15px;
+  border-radius:8px;
   transition:0.3s;
 }
-
 .nav-link:hover {
   background:#ff0000;
-  color:white;
 }
-
 .close-btn {
   position:absolute;
   top:10px;
   left:15px;
-  font-size:3em;
+  font-size:2.5em;
   cursor:pointer;
   color:white;
 }
 
-/* ======= Overlay ======= */
+/* ======= Overlay عند فتح القائمة ======= */
 #nav-overlay {
   position:fixed;
   top:0;
@@ -92,8 +86,8 @@ h1 {
   width:100%;
   height:100%;
   display:none;
-  background:rgba(0,0,0,0.5);
-  z-index:400;
+  background:rgba(0,0,0,0.7);
+  z-index:250;
 }
 
 /* ======= محتوى ======= */
@@ -118,7 +112,6 @@ h1 {
   color:#ff0000;
   margin-top:30px;
 }
-
 .welcome-subtext {
   font-size:1.5em;
   margin-top:18px;
@@ -154,7 +147,6 @@ h1 {
   transform: translateY(-8px);
   box-shadow:0 0 40px #ff0000;
 }
-
 .avatar {
   width:140px;
   height:140px;
@@ -168,70 +160,29 @@ h1 {
   height:100%;
   object-fit:cover;
 }
-
 .user-card span {
   display:block;
   font-size:1.25em;
   margin-bottom:6px;
   color:white;
 }
-
 .user-card small {
   color:#aaa;
   font-size:1em;
 }
 
-/* ======= زر الدسكورد ======= */
-.discord-btn {
-  display:inline-block;
-  background:#ff0000;
-  color:white;
-  padding:20px 60px;
-  font-size:1.6em;
-  border-radius:28px;
-  text-decoration:none;
-  margin:25px 0;
-  transition:0.3s;
+/* ======= High Staff مميز ======= */
+.highstaff-cards .user-card {
+  background:#1a1a1a;
+  border:3px solid #ff4d4d;
+  box-shadow:0 0 25px rgba(255,77,77,0.6);
 }
-.discord-btn:hover {
-  transform:translateY(-5px) scale(1.08);
-  box-shadow:0 0 40px #ff0000;
+.highstaff-cards .user-card:hover {
+  transform: translateY(-10px);
+  box-shadow:0 0 45px #ff1a1a;
 }
-
-/* ======= ويدجت الدسكورد ======= */
-.discord-widget {
-  width:100%;
-  max-width:400px;
-  height:450px;
-  margin:0 auto;
-  border-radius:20px;
-  border:none;
-  overflow:hidden;
-}
-
-/* ======= عداد الأعضاء ======= */
-.member-count {
-  font-size:1.5em;
-  margin:20px 0;
-  color:white;
-}
-
-/* ======= القوانين ======= */
-.rule-card {
-  background: rgba(17,17,17,0.95);
-  padding:22px 28px;
-  margin:20px auto;
-  border-radius:15px;
-  max-width:750px;
-  font-size:1.25em;
-  line-height:1.7em;
-  color:#fff;
-  box-shadow: 0 0 22px rgba(0,0,0,0.5);
-}
-
-.rule-card h3 {
-  color:#ff0000;
-  margin-bottom:8px;
+.highstaff-cards .avatar {
+  border:4px solid #ff4d4d;
 }
 
 /* ======= Responsive للجوال ======= */
@@ -240,10 +191,7 @@ h1 {
   .welcome-subtext { font-size:1.2em; }
   .user-card { width:180px; padding:22px; }
   .avatar { width:100px; height:100px; }
-  .discord-btn { padding:14px 40px; font-size:1.3em; }
-  .rule-card { font-size:1.1em; padding:18px 22px; }
   h1 { font-size:1.7em; }
-  .menu-btn { font-size:3em; padding:8px; }
-  .nav-link { font-size:1.8em; padding:18px 20px; }
-  .close-btn { font-size:2.5em; top:5px; left:10px; }
+  .menu-btn { font-size:2.5em; padding:8px; }
+  .nav-link { font-size:1.5em; padding:25px; }
 }
