@@ -11,8 +11,10 @@
   <h1>Respect Town</h1>
 </header>
 
-<div id="nav-overlay" onclick="toggleMenu()"></div>
+<div id="nav-overlay" onclick="closeMenu()"></div>
+
 <nav class="nav-menu" id="navMenu">
+  <div class="close-btn" onclick="closeMenu()">✖</div>
   <a href="index.html" class="nav-link">القوانين</a>
   <a href="home.html" class="nav-link">الصفحة الرئيسية</a>
   <a href="discord.html" class="nav-link">سيرفر الدسكورد</a>
@@ -20,14 +22,27 @@
 
 <div class="container">
   <h2 class="page-title">قوانين السيرفر</h2>
-  
-  <div class="rule-card">احترام جميع اللاعبين بدون استثناء.</div>
-  <div class="rule-card">يمنع استخدام أي قلتش أو استغلال الأخطاء في اللعبة.</div>
-  <div class="rule-card">الالتزام بالرول بلاي الواقعي في جميع الأوقات.</div>
-  <div class="rule-card">يمنع القتل العشوائي (RDM) أو الانتحال.</div>
-  <div class="rule-card">الالتزام بتعليمات الإداريين ورفع البلاغات عند الحاجة.</div>
-  <div class="rule-card">التواصل باحترام مع جميع اللاعبين وعدم استخدام ألفاظ مسيئة.</div>
-  <div class="rule-card">حماية نفسك وعدم مشاركة بياناتك الشخصية.</div>
+
+  <div class="rule-card">
+    <h3>الغش</h3>
+    <p>ممنوع الغش بجميع أنواعه داخل اللعبة.</p>
+  </div>
+  <div class="rule-card">
+    <h3>القتل العشوائي (RDM)</h3>
+    <p>يمنع قتل اللاعبين بدون سبب أو استغلال رول بلاي.</p>
+  </div>
+  <div class="rule-card">
+    <h3>الانتحال</h3>
+    <p>يمنع انتحال شخصية أي لاعب أو موظف.</p>
+  </div>
+  <div class="rule-card">
+    <h3>الاحترام</h3>
+    <p>احترام جميع اللاعبين بدون استثناء.</p>
+  </div>
+  <div class="rule-card">
+    <h3>التعليمات</h3>
+    <p>الالتزام بتعليمات الإداريين ورفع البلاغات عند الحاجة.</p>
+  </div>
 </div>
 
 <script src="script.js"></script>
