@@ -10,7 +10,7 @@ function toggleMenu(){
   }
 }
 
-// ======= عداد أعضاء الدسكورد (صفحة discord.html) =======
+// ======= عداد أعضاء الدسكورد =======
 const memberCountSpan = document.getElementById('memberCount');
 if(memberCountSpan){
   fetch("https://discord.com/api/v10/guilds/1453314826322317366/widget.json")
