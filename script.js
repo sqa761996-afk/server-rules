@@ -1,21 +1,21 @@
 // ======= زر الثلاث خطوط للقائمة =======
-function toggleMenu(){
+function toggleMenu() {
   const menu = document.getElementById('navMenu');
   const overlay = document.getElementById('nav-overlay');
   menu.classList.toggle('open');
-  if(menu.classList.contains('open')){
+  if (menu.classList.contains('open')) {
     overlay.style.display = 'block';
   } else {
     overlay.style.display = 'none';
   }
 }
 
-// ======= عداد أعضاء الدسكورد =======
+// ======= عداد أعضاء الدسكورد (صفحة discord.html) =======
 const memberCountSpan = document.getElementById('memberCount');
-if(memberCountSpan){
+if (memberCountSpan) {
   fetch("https://discord.com/api/v10/guilds/1453314826322317366/widget.json")
     .then(res => {
-      if(!res.ok) throw new Error("API error");
+      if (!res.ok) throw new Error("API error");
       return res.json();
     })
     .then(data => {
@@ -29,7 +29,9 @@ if(memberCountSpan){
 
 // ======= Animations سلسة =======
 document.addEventListener("DOMContentLoaded", () => {
-  const animatedElements = document.querySelectorAll(".user-card, .rule-card, .hero-image, .welcome-text, .welcome-subtext, .discord-widget, .discord-btn");
+  const animatedElements = document.querySelectorAll(
+    ".user-card, .rule-card, .hero-image, .welcome-text, .welcome-subtext, .discord-widget, .discord-btn"
+  );
   animatedElements.forEach((el, i) => {
     el.style.opacity = 0;
     el.style.transform = "translateY(15px)";
