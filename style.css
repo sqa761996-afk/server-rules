@@ -1,265 +1,238 @@
-/* ================== إعدادات عامة ================== */
-* {
-  box-sizing: border-box;
-}
-
+/* ======= عام ======= */
 body {
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, sans-serif;
-  background: #0e0e0e;
-  color: #eaeaea;
+  margin:0;
+  font-family: "Arial", sans-serif;
+  background:#0b0b0b;
+  color:white;
 }
 
-/* ================== الهيدر ================== */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 90px;
-  background: linear-gradient(180deg, #111, #0b0b0b);
-  display: flex;
-  align-items: center;
-  padding: 0 24px;
-  z-index: 1000;
-  border-bottom: 2px solid #b80000;
+  background:#111;
+  padding:18px 25px;
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+  border-bottom:4px solid #ff0000;
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:200;
 }
 
 h1 {
-  margin: 0 0 0 18px;
-  font-size: 1.6rem;
-  color: #e60000;
-  font-weight: 600;
+  font-size:2em;
+  color:#ff0000;
+  margin:0 0 0 20px;
 }
 
-/* ================== زر الثلاث خطوط ================== */
+/* زر الثلاث خطوط */
 .menu-btn {
-  width: 54px;
-  height: 54px;
-  border: 2px solid rgba(255,255,255,0.35);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  cursor: pointer;
-  transition: 0.25s;
-  background: rgba(255,255,255,0.04);
+  font-size:3em;
+  cursor:pointer;
+  color:white;
+  transition:0.3s;
+  padding:15px;
+  border:2px solid #ff0000;
+  border-radius:12px;
 }
-
 .menu-btn:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: #e60000;
-  color: #e60000;
+  color:#ff4d4d;
+  transform:scale(1.1);
 }
 
-/* ================== القائمة الجانبية ================== */
+/* ======= القائمة الجانبية ======= */
 .nav-menu {
-  position: fixed;
-  top: 0;
-  right: -340px;
-  width: 340px;
-  height: 100%;
-  background: #0f0f0f;
-  padding-top: 110px;
-  transition: 0.35s ease;
-  z-index: 1200;
-  box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+  position:fixed;
+  top:0;
+  right:-320px;
+  width:320px;
+  height:100%;
+  background:#111;
+  transition:0.4s ease;
+  padding-top:100px;
+  z-index:250;
+  box-shadow:-5px 0 15px rgba(0,0,0,0.6);
 }
-
-.nav-menu.open {
-  right: 0;
-}
+.nav-menu.open { right:0; }
 
 .nav-link {
-  display: block;
-  margin: 0 24px;
-  padding: 18px 20px;
-  font-size: 1.25rem;
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-  transition: 0.25s;
+  display:block;
+  padding:25px 30px;
+  color:white;
+  text-decoration:none;
+  font-size:2em;
+  border-bottom:1px solid #fff;
+  margin:0 12px;
+  transition:0.3s;
+}
+.nav-link:hover { background:#ff0000; }
+
+.close-btn {
+  position:absolute;
+  top:20px;
+  left:20px;
+  font-size:2.5em;
+  cursor:pointer;
+  color:white;
 }
 
-.nav-link:hover {
-  background: rgba(255,255,255,0.06);
-  color: #e60000;
-}
-
-/* زر الإغلاق */
-.nav-menu::before {
-  content: "✕";
-  position: absolute;
-  top: 26px;
-  right: 26px;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #fff;
-}
-
-/* ================== الخلفية عند فتح القائمة ================== */
+/* ======= Overlay عند فتح القائمة ======= */
 #nav-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  z-index: 1100;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display:none;
+  background:rgba(0,0,0,0.7);
+  z-index:200;
 }
 
-/* ================== المحتوى ================== */
+/* ======= محتوى ======= */
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 24px;
-  padding-top: 180px; /* <<< هذا هو الحل لمشكلة الصورة */
-  text-align: center;
+  text-align:center;
+  margin-top:150px;
+  padding:25px;
+  max-width:1200px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
-/* ================== صورة السيرفر ================== */
+/* ======= الصور ======= */
 .hero-image {
-  width: 100%;
-  max-width: 1100px;
-  height: auto;
-  display: block;
-  margin: 0 auto 45px auto;
-  border-radius: 18px;
+  max-width:95%;
+  border-radius:18px;
 }
 
-/* ================== نص الترحيب ================== */
+/* ======= الترحيب ======= */
 .welcome-text {
-  font-size: 2.3rem;
-  color: #e60000;
-  margin-bottom: 12px;
+  font-size:2.5em;
+  color:#ff0000;
+  margin-top:30px;
 }
 
 .welcome-subtext {
-  font-size: 1.35rem;
-  color: #cfcfcf;
-  line-height: 1.8;
-  max-width: 900px;
-  margin: 0 auto;
+  font-size:1.5em;
+  margin-top:18px;
+  color:#ccc;
 }
 
-/* ================== العناوين ================== */
+/* ======= عناوين الأقسام ======= */
 .section-title {
-  margin-top: 70px;
-  margin-bottom: 35px;
-  font-size: 1.9rem;
-  color: #e60000;
+  margin-top:50px;
+  margin-bottom:25px;
+  color:#ff0000;
+  font-size:2em;
 }
 
-/* ================== بطاقات الأشخاص ================== */
+/* ======= بطاقات المستخدمين ======= */
 .cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 32px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:35px;
 }
 
 .user-card {
-  width: 200px;
-  background: #111;
-  border-radius: 22px;
-  padding: 24px 18px;
-  text-align: center;
-  transition: 0.3s;
+  background:#111;
+  padding:20px;
+  border-radius:20px;
+  width:180px;
+  text-align:center;
+  box-shadow:0 0 22px rgba(0,0,0,0.7);
+  transition:0.4s;
 }
-
 .user-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(230,0,0,0.5);
+  transform: translateY(-8px);
+  box-shadow:0 0 40px #ff0000;
 }
 
 .avatar {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 16px auto;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid #e60000;
+  width:120px;
+  height:120px;
+  margin:0 auto 12px auto;
+  border-radius:50%;
+  overflow:hidden;
+  border:3px solid #ff0000;
 }
-
 .avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
 .user-card span {
-  display: block;
-  font-size: 1.15rem;
-  margin-bottom: 4px;
+  display:block;
+  font-size:1.25em;
+  margin-bottom:6px;
+  color:white;
 }
 
 .user-card small {
-  color: #aaa;
+  color:#aaa;
+  font-size:1em;
 }
 
-/* ================== زر الدسكورد ================== */
+/* ======= زر الدسكورد ======= */
 .discord-btn {
-  display: inline-block;
-  margin: 35px auto;
-  padding: 16px 46px;
-  background: linear-gradient(135deg, #e60000, #9c0000);
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.4rem;
-  border-radius: 30px;
-  transition: 0.3s;
+  display:inline-block;
+  background:#ff0000;
+  color:white !important;
+  padding:18px 50px;
+  font-size:1.5em;
+  border-radius:28px;
+  text-decoration:none;
+  margin:25px 0;
+  transition:0.3s;
+  border:2px solid #ff4d4d;
+  box-shadow:0 0 25px rgba(255,0,0,0.6);
 }
-
 .discord-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 30px rgba(230,0,0,0.6);
+  transform:translateY(-5px) scale(1.08);
+  box-shadow:0 0 50px #ff0000;
+  background:#ff4d4d;
 }
 
-/* ================== عداد الأعضاء ================== */
-.member-count {
-  font-size: 1.3rem;
-  margin-bottom: 24px;
-}
-
-/* ================== ويدجت الدسكورد ================== */
+/* ======= ويدجت الدسكورد ======= */
 .discord-widget {
-  width: 100%;
-  max-width: 420px;
-  height: 450px;
-  margin: 0 auto;
-  border-radius: 18px;
-  border: none;
+  width:100%;
+  max-width:400px;
+  height:450px;
+  margin:0 auto;
+  border-radius:20px;
+  border:none;
+  overflow:hidden;
 }
 
-/* ================== القوانين ================== */
+/* ======= عداد الأعضاء ======= */
+.member-count {
+  font-size:1.5em;
+  margin:20px 0;
+  color:white;
+}
+
+/* ======= القوانين ======= */
 .rule-card {
-  background: #121212;
-  border-left: 4px solid #e60000;
-  padding: 22px 26px;
-  margin: 22px auto;
-  max-width: 850px;
-  border-radius: 12px;
-  text-align: right;
+  background: rgba(17,17,17,0.95);
+  padding:22px 28px;
+  margin:20px auto;
+  border-radius:15px;
+  max-width:750px;
+  font-size:1.25em;
+  line-height:1.7em;
+  color:#fff;
+  box-shadow: 0 0 22px rgba(0,0,0,0.5);
 }
 
-.rule-card strong {
-  display: block;
-  font-size: 1.25rem;
-  color: #fff;
-  margin-bottom: 8px;
-}
-
-.rule-card p {
-  margin: 0;
-  font-size: 1.1rem;
-  color: #cfcfcf;
-  line-height: 1.8;
-}
-
-/* ================== الجوال ================== */
-@media (max-width: 600px) {
-  h1 { font-size: 1.3rem; }
-  .menu-btn { width: 48px; height: 48px; font-size: 1.8rem; }
-  .welcome-text { font-size: 1.9rem; }
-  .welcome-subtext { font-size: 1.15rem; }
-  .user-card { width: 170px; }
+/* ======= Responsive للجوال ======= */
+@media (max-width:600px){
+  .welcome-text { font-size:2em; }
+  .welcome-subtext { font-size:1.2em; }
+  .user-card { width:140px; padding:18px; }
+  .avatar { width:100px; height:100px; }
+  .discord-btn { padding:14px 40px; font-size:1.3em; }
+  .rule-card { font-size:1.1em; padding:18px 22px; }
+  h1 { font-size:1.7em; }
+  .menu-btn { font-size:2.5em; padding:8px; }
+  .nav-link { font-size:1.5em; padding:18px 20px; }
 }
