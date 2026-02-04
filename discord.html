@@ -6,30 +6,38 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header class="header">
-  <button class="burger" onclick="openMenu()">☰</button>
-  <span class="logo">Respect Town</span>
+<header>
+  <div class="menu-btn" id="menuBtn">☰</div>
+  <h1>Respect Town</h1>
 </header>
 
-<div class="overlay" onclick="closeMenu()"></div>
-
-<nav class="side-menu">
-  <button class="close-btn" onclick="closeMenu()">✕</button>
-  <a href="index.html">القوانين</a>
-  <a href="home.html">الصفحة الرئيسية</a>
-  <a href="discord.html">سيرفر الدسكورد</a>
+<div id="nav-overlay" onclick="toggleMenu()"></div>
+<nav class="nav-menu" id="navMenu">
+  <div class="close-btn" onclick="toggleMenu()">×</div>
+  <a href="index.html" class="nav-link">القوانين</a>
+  <a href="home.html" class="nav-link">الصفحة الرئيسية</a>
+  <a href="discord.html" class="nav-link">سيرفر الدسكورد</a>
 </nav>
 
-<main class="content">
+<div class="container">
+  <img src="assets/images/IMG_1638.png" class="hero-image">
 
-  <img src="assets/images/server.png" class="hero">
-
-  <a href="https://discord.gg/rr-tt" class="discord-btn" target="_blank">
-    دخول سيرفر الدسكورد
+  <a class="discord-btn" href="https://discord.gg/rr-tt" target="_blank">
+    دخول سيرفر Respect Town
   </a>
 
-</main>
+  <div class="member-count">
+    عدد الأعضاء: <span id="memberCount">0</span>
+  </div>
+
+  <iframe 
+    src="https://discord.com/widget?id=1453314826322317366&theme=dark"
+    class="discord-widget"
+    allowtransparency="true"
+    frameborder="0"
+    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+  </iframe>
+</div>
 
 <script src="script.js"></script>
 </body>
