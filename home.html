@@ -7,38 +7,40 @@
 </head>
 <body>
 
-<header>
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  <h1>Respect Town</h1>
+<header class="header">
+  <button class="burger" onclick="openMenu()">☰</button>
+  <span class="logo">Respect Town</span>
 </header>
 
-<div id="nav-overlay" onclick="toggleMenu()"></div>
+<div class="overlay" onclick="closeMenu()"></div>
 
-<nav class="nav-menu" id="navMenu">
-  <a href="index.html" class="nav-link">القوانين</a>
-  <a href="home.html" class="nav-link">الصفحة الرئيسية</a>
-  <a href="discord.html" class="nav-link">سيرفر الدسكورد</a>
+<nav class="side-menu">
+  <button class="close-btn" onclick="closeMenu()">✕</button>
+  <a href="index.html">القوانين</a>
+  <a href="home.html">الصفحة الرئيسية</a>
+  <a href="discord.html">سيرفر الدسكورد</a>
 </nav>
 
-<div class="container">
+<main class="content">
 
-  <!-- صورة السيرفر (حل نهائي) -->
-  <img
-    src="https://cdn.discordapp.com/attachments/1465034194983059469/1468310707475976383/IMG_1638.png"
-    class="hero-image"
-    referrerpolicy="no-referrer"
-    alt="Respect Town"
-  >
+  <img src="assets/images/server.png" class="hero">
 
-  <div class="welcome-text">رسبكت تاون</div>
+  <h1 class="welcome">رسبكت تاون</h1>
+  <p class="subtitle">أفضل سيرفر رول بلاي عربي واقعي</p>
 
-  <div class="welcome-subtext">
-    افضل سيرفر رول بلاي واقعي اختر طريقك
-    كن شرطي يدافع عن المدينة
-    او مجرم يصنع قانونه بنفسه
+  <h2 class="section-title">Owners</h2>
+  <div class="team">
+    <div class="card"><img src="assets/images/owner1.png"><span>nawaf3mk</span></div>
+    <div class="card"><img src="assets/images/owner2.png"><span>5zym0</span></div>
+    <div class="card"><img src="assets/images/owner3.png"><span>3f.rt</span></div>
   </div>
 
-</div>
+  <h2 class="section-title">Website Developer</h2>
+  <div class="team">
+    <div class="card"><img src="assets/images/dev.png"><span>.4ba7</span></div>
+  </div>
+
+</main>
 
 <script src="script.js"></script>
 </body>
