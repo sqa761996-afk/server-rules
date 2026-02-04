@@ -1,4 +1,4 @@
-// ======= قائمة الثلاث خطوط =======
+// ======= زر الثلاث خطوط =======
 function toggleMenu(){
   const menu = document.getElementById('navMenu');
   const overlay = document.getElementById('nav-overlay');
@@ -23,7 +23,7 @@ if(memberCountSpan){
     });
 }
 
-// ======= Animations إضافية (اختياري) =======
+// ======= Animations سلسة =======
 document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".user-card, .rule-card, .hero-image, .welcome-text, .welcome-subtext, .discord-widget");
   cards.forEach((el, i) => {
