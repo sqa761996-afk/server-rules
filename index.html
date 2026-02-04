@@ -6,63 +6,45 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  <h1>Respect Town</h1>
+
+<header class="header">
+  <button class="burger" onclick="openMenu()">☰</button>
+  <span class="logo">Respect Town</span>
 </header>
 
-<div id="nav-overlay" onclick="toggleMenu()"></div>
-<nav class="nav-menu" id="navMenu">
-  <div class="close-btn" onclick="toggleMenu()">✖</div>
-  <a href="index.html" class="nav-link">القوانين</a>
-  <a href="home.html" class="nav-link">الصفحة الرئيسية</a>
-  <a href="discord.html" class="nav-link">سيرفر الدسكورد</a>
+<div class="overlay" onclick="closeMenu()"></div>
+
+<nav class="side-menu">
+  <button class="close-btn" onclick="closeMenu()">✕</button>
+  <a href="index.html">القوانين</a>
+  <a href="home.html">الصفحة الرئيسية</a>
+  <a href="discord.html">سيرفر الدسكورد</a>
 </nav>
 
-<div class="container">
-  <h2 class="page-title">قوانين السيرفر</h2>
-  
-  <div class="rule-card">
-    <h3>قوانين الحياة الجديدة - RB</h3>
-    <p>في حال تم إسقاط شخص بالكامل أو فقدان وعيه لا يستطيع الكلام، الحركة، أو القيام بأي فعل...</p>
-  </div>
-  <div class="rule-card">
-    <h3>الباور جيمنج - PowerGaming</h3>
-    <p>استخدام وسائل غير موجودة في اللعبة للحصول على ميزة أو لتجاوز قوانين العالم الواقعية...</p>
-  </div>
-  <div class="rule-card">
-    <h3>الخوف على الحياة - NVL (No Violence Life)</h3>
-    <p>عدم إظهار الخوف بشكل واقعي عند التهديد بالأسلحة أو التعرض للخطر يعتبر مخالف...</p>
-  </div>
-  <div class="rule-card">
-    <h3>الميتا جيمنج - Metagaming</h3>
-    <p>استخدام معلومات حصلت عليها من خارج اللعبة داخل اللعبة يعتبر مخالفة...</p>
-  </div>
-  <div class="rule-card">
-    <h3>القتل العشوائي - RDM</h3>
-    <p>قتل الأشخاص بلا سبب أو تهديد مسبق، أو بطريقة عشوائية، يعتبر مخالفة واضحة...</p>
-  </div>
-  <div class="rule-card">
-    <h3>قانون تقدير الحياة - NWL</h3>
-    <p>الحفاظ على حياتك وحياة الآخرين واجب أساسي. لا تهدد أو تستهين بحياة الآخرين...</p>
-  </div>
-  <div class="rule-card">
-    <h3>الاتفاقيات خارج الرول بلاي</h3>
-    <p>أي اتفاق يتم خارج اللعبة لتسهيل أحداث داخل اللعبة يعتبر مخالف...</p>
-  </div>
-  <div class="rule-card">
-    <h3>الإهانة للشخص المسقط</h3>
-    <p>يمنع تمامًا إهانة أي لاعب تم إسقاطه أو فقد وعيه خلال اللعبة...</p>
-  </div>
-  <div class="rule-card">
-    <h3>بناء شخصية حقيقية - Roleplay Character</h3>
-    <p>يجب على كل لاعب بناء شخصية فريدة له وتمثيلها بجدية...</p>
-  </div>
-  <div class="rule-card">
-    <h3>ملفات أو أدوات مضرة باللعب</h3>
-    <p>يحظر استخدام أي ملفات أو أدوات تؤثر سلبًا على اللعب...</p>
-  </div>
-</div>
+<main class="content">
+  <h1 class="page-title">قوانين السيرفر</h1>
+
+  <section class="rule">
+    <h2>قوانين الحياة الجديدة - RB</h2>
+    <p>في حال تم إسقاط شخص بالكامل أو فقد وعيه لا يستطيع الكلام أو الحركة. في حال إنعاشه من قبل المسعفين يمكنه تذكر الأحداث.</p>
+  </section>
+
+  <section class="rule">
+    <h2>PowerGaming - الباور جيمنج</h2>
+    <p>استخدام وسائل غير موجودة في اللعبة للحصول على أفضلية غير واقعية يعتبر مخالفة.</p>
+  </section>
+
+  <section class="rule">
+    <h2>NVL - الخوف على الحياة</h2>
+    <p>عدم إظهار الخوف الواقعي عند التهديد أو الخطر يعتبر مخالفة.</p>
+  </section>
+
+  <section class="rule">
+    <h2>RDM - القتل العشوائي</h2>
+    <p>قتل الأشخاص بدون سبب أو تهديد مسبق ممنوع.</p>
+  </section>
+
+</main>
 
 <script src="script.js"></script>
 </body>
