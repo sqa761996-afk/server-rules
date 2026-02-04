@@ -6,6 +6,14 @@ function toggleMenu(){
   overlay.style.display = menu.classList.contains('open') ? 'block' : 'none';
 }
 
+// ======= زر الإغلاق X للقائمة =======
+function closeMenu(){
+  const menu = document.getElementById('navMenu');
+  const overlay = document.getElementById('nav-overlay');
+  menu.classList.remove('open');
+  overlay.style.display = 'none';
+}
+
 // ======= Animations سلسة لجميع الصفحات =======
 document.addEventListener("DOMContentLoaded", () => {
   const animatedElements = document.querySelectorAll(
