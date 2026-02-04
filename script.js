@@ -1,5 +1,5 @@
 // ======= زر الثلاث خطوط للقائمة =======
-function toggleMenu() {
+function toggleMenu(){
   const menu = document.getElementById('navMenu');
   const overlay = document.getElementById('nav-overlay');
   menu.classList.toggle('open');
@@ -9,14 +9,6 @@ function toggleMenu() {
     overlay.style.display = 'none';
   }
 }
-
-// ======= Overlay يغلق القائمة عند الضغط =======
-document.getElementById('nav-overlay').addEventListener('click', () => {
-  const menu = document.getElementById('navMenu');
-  const overlay = document.getElementById('nav-overlay');
-  menu.classList.remove('open');
-  overlay.style.display = 'none';
-});
 
 // ======= عداد أعضاء الدسكورد (صفحة discord.html) =======
 const memberCountSpan = document.getElementById('memberCount');
