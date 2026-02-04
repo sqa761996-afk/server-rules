@@ -5,6 +5,7 @@ function toggleMenu() {
   overlay.style.display = menu.classList.contains("open") ? "block" : "none";
 }
 
+// تحديث عدد أعضاء السيرفر
 async function updateMemberCount() {
   const serverID = "1453314826322317366"; // ID السيرفر
   const endpoint = `https://discord.com/api/guilds/${serverID}/widget.json`;
