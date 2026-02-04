@@ -10,6 +10,14 @@ function toggleMenu(){
   }
 }
 
+// ======= زر X لإغلاق القائمة =======
+function closeMenu(){
+  const menu = document.getElementById('navMenu');
+  const overlay = document.getElementById('nav-overlay');
+  menu.classList.remove('open');
+  overlay.style.display = 'none';
+}
+
 // ======= عداد أعضاء الدسكورد (صفحة discord.html) =======
 const memberCountSpan = document.getElementById('memberCount');
 if(memberCountSpan){
