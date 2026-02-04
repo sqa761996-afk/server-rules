@@ -16,27 +16,30 @@ header {
   position:fixed;
   width:100%;
   top:0;
-  z-index:100;
+  z-index:450;
 }
 
 h1 {
   font-size:2em;
   color:#ff0000;
   margin:0 0 0 20px;
+  position:relative;
+  z-index:450;
 }
 
 .menu-btn {
-  font-size:4em; /* أكبر مرتين */
+  font-size:4em;
   cursor:pointer;
   color:white;
   transition:0.3s;
   padding:10px;
   border:3px solid #ff0000;
   border-radius:12px;
+  position:relative;
+  z-index:450;
 }
 .menu-btn:hover {
   color:#ff0000;
-  box-shadow:0 0 25px #ff0000;
 }
 
 /* ======= القائمة الجانبية ======= */
@@ -49,7 +52,7 @@ h1 {
   background:#111;
   transition:0.4s ease;
   padding-top:60px;
-  z-index:300;
+  z-index:500;
   box-shadow:-5px 0 15px rgba(0,0,0,0.6);
 }
 
@@ -62,17 +65,16 @@ h1 {
   padding:25px 30px;
   color:white;
   text-decoration:none;
-  font-size:2.2em; /* أكبر 3.5 مرات تقريبا */
-  border-bottom:2px solid #fff;
-  margin:0;
+  font-size:2.2em;
+  border-bottom:1px solid #fff;
   transition:0.3s;
 }
+
 .nav-link:hover {
   background:#ff0000;
   color:white;
 }
 
-/* ======= زر الإغلاق للقائمة ======= */
 .close-btn {
   position:absolute;
   top:10px;
@@ -80,10 +82,6 @@ h1 {
   font-size:3em;
   cursor:pointer;
   color:white;
-  transition:0.3s;
-}
-.close-btn:hover {
-  color:#ff0000;
 }
 
 /* ======= Overlay ======= */
@@ -95,7 +93,7 @@ h1 {
   height:100%;
   display:none;
   background:rgba(0,0,0,0.5);
-  z-index:200;
+  z-index:400;
 }
 
 /* ======= محتوى ======= */
@@ -232,15 +230,8 @@ h1 {
 }
 
 .rule-card h3 {
-  margin-top:0;
   color:#ff0000;
-  font-size:1.6em;
-}
-
-.rule-card p {
-  font-size:1.25em;
-  color:#ccc;
-  line-height:1.6em;
+  margin-bottom:8px;
 }
 
 /* ======= Responsive للجوال ======= */
@@ -252,7 +243,7 @@ h1 {
   .discord-btn { padding:14px 40px; font-size:1.3em; }
   .rule-card { font-size:1.1em; padding:18px 22px; }
   h1 { font-size:1.7em; }
-  .menu-btn { font-size:3.5em; padding:8px; }
-  .nav-link { font-size:1.7em; padding:18px 20px; }
-  .close-btn { font-size:2.5em; left:10px; }
+  .menu-btn { font-size:3em; padding:8px; }
+  .nav-link { font-size:1.8em; padding:18px 20px; }
+  .close-btn { font-size:2.5em; top:5px; left:10px; }
 }
