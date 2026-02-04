@@ -1,7 +1,7 @@
 /* ======= عام ======= */
 body {
   margin:0;
-  font-family: "Arial", sans-serif;
+  font-family:"Arial",sans-serif;
   background:#0a0a0a;
   color:white;
 }
@@ -17,7 +17,7 @@ header {
   width:100%;
   top:0;
   z-index:200;
-  box-shadow: 0 0 15px rgba(0,0,0,0.8);
+  box-shadow:0 0 15px rgba(0,0,0,0.8);
 }
 
 h1 {
@@ -149,22 +149,22 @@ h1 {
 
 .user-card {
   background:#111;
-  padding:28px;
-  border-radius:28px;
-  width:220px;
+  padding:20px;
+  border-radius:50%;
+  width:160px;
   text-align:center;
   box-shadow:0 0 25px rgba(255,0,0,0.5);
   transition:0.4s;
 }
 .user-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
   box-shadow:0 0 50px #ff0000;
 }
 
 .avatar {
-  width:140px;
-  height:140px;
-  margin:0 auto 18px auto;
+  width:120px;
+  height:120px;
+  margin:0 auto 12px auto;
   border-radius:50%;
   overflow:hidden;
   border:4px solid #ff0000;
@@ -177,14 +177,14 @@ h1 {
 
 .user-card span {
   display:block;
-  font-size:1.3em;
-  margin-bottom:6px;
+  font-size:1.1em;
+  margin-bottom:4px;
   color:white;
 }
 
 .user-card small {
   color:#aaa;
-  font-size:1em;
+  font-size:0.9em;
 }
 
 /* ======= زر الدسكورد ======= */
@@ -192,8 +192,8 @@ h1 {
   display:inline-block;
   background:#ff0000;
   color:white;
-  padding:20px 60px;
-  font-size:1.6em;
+  padding:18px 50px;
+  font-size:1.5em;
   border-radius:28px;
   text-decoration:none;
   margin:25px 0;
@@ -243,9 +243,9 @@ h1 {
 @media (max-width:600px){
   .welcome-text { font-size:2em; }
   .welcome-subtext { font-size:1.2em; }
-  .user-card { width:180px; padding:22px; }
-  .avatar { width:100px; height:100px; }
-  .discord-btn { padding:14px 40px; font-size:1.3em; }
+  .user-card { width:140px; padding:15px; }
+  .avatar { width:90px; height:90px; }
+  .discord-btn { padding:12px 30px; font-size:1.2em; }
   .rule-card { font-size:1.1em; padding:18px 22px; }
   h1 { font-size:1.7em; }
   .menu-btn { font-size:3em; padding:10px; }
