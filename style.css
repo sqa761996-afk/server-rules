@@ -1,7 +1,7 @@
 /* ======= عام ======= */
 body {
   margin:0;
-  font-family:"Arial", sans-serif;
+  font-family: "Arial", sans-serif;
   background:#0b0b0b;
   color:white;
 }
@@ -26,31 +26,30 @@ h1 {
 }
 
 .menu-btn {
-  font-size:2.8em;
+  font-size:3.5em; /* كبير مرتين ونص */
   cursor:pointer;
   color:white;
-  padding:10px;
-  border:2px solid white;
-  border-radius:8px;
+  padding:12px;
+  border:2px solid #ff0000;
+  border-radius:10px;
   transition:0.3s;
 }
 .menu-btn:hover {
-  color:#ff00ff;
-  border-color:#ff00ff;
-  box-shadow:0 0 15px #ff00ff;
+  color:#ff0000;
+  box-shadow:0 0 20px #ff0000;
 }
 
 /* ======= القائمة الجانبية ======= */
 .nav-menu {
   position:fixed;
   top:0;
-  right:-280px;
-  width:280px;
+  right:-320px; /* تفتح من اليمين */
+  width:320px;
   height:100%;
   background:#111;
   transition:0.4s ease;
   padding-top:90px;
-  z-index:250;
+  z-index:300;
   box-shadow:-5px 0 15px rgba(0,0,0,0.6);
 }
 .nav-menu.open {
@@ -59,28 +58,30 @@ h1 {
 
 .nav-link {
   display:block;
-  padding:20px 30px;
+  padding:30px 20px;
   color:white;
   text-decoration:none;
-  font-size:1.5em;
-  border-bottom:1px solid #fff;
-  margin:0 12px;
+  font-size:2.2em; /* أكبر 3.5 مرة من السابق */
+  border-bottom:2px solid #fff;
+  margin:0;
   transition:0.3s;
 }
 .nav-link:hover {
   background:#ff0000;
+  color:#fff;
 }
 
+/* زر إغلاق القائمة */
 .close-btn {
   position:absolute;
-  top:20px;
-  left:20px;
-  font-size:2.5em;
+  top:15px;
+  left:15px;
+  font-size:3em;
   cursor:pointer;
-  color:white;
+  color:#ff0000;
 }
 
-/* ======= Overlay عند فتح القائمة ======= */
+/* Overlay عند فتح القائمة */
 #nav-overlay {
   position:fixed;
   top:0;
@@ -89,7 +90,7 @@ h1 {
   height:100%;
   display:none;
   background:rgba(0,0,0,0.7);
-  z-index:200;
+  z-index:250;
 }
 
 /* ======= محتوى ======= */
@@ -129,6 +130,21 @@ h1 {
   font-size:2em;
 }
 
+/* Website Developer مميز */
+.developer-title {
+  color:#b45cff;
+}
+
+.developer-card {
+  border:2px solid #b45cff;
+  box-shadow:0 0 25px #b45cff;
+  transition:0.4s;
+}
+.developer-card:hover {
+  transform: translateY(-8px);
+  box-shadow:0 0 45px #b45cff;
+}
+
 /* ======= بطاقات المستخدمين ======= */
 .cards {
   display:flex;
@@ -147,7 +163,7 @@ h1 {
   transition:0.4s;
 }
 .user-card:hover {
-  transform:translateY(-8px);
+  transform: translateY(-8px);
   box-shadow:0 0 40px #ff0000;
 }
 
@@ -177,21 +193,6 @@ h1 {
   font-size:1em;
 }
 
-/* ======= Website Developer مميز ======= */
-.developer-card {
-  border:4px solid #8000ff;
-  box-shadow:0 0 20px #8000ff;
-  transition:0.4s;
-}
-.developer-card span:hover {
-  color:#ff00ff;
-  text-shadow:0 0 15px #ff00ff;
-}
-.developer-card:hover {
-  transform:translateY(-8px);
-  box-shadow:0 0 40px #ff00ff;
-}
-
 /* ======= Responsive للجوال ======= */
 @media (max-width:600px){
   .welcome-text { font-size:2em; }
@@ -199,7 +200,7 @@ h1 {
   .user-card { width:180px; padding:22px; }
   .avatar { width:100px; height:100px; }
   h1 { font-size:1.7em; }
-  .menu-btn { font-size:2.5em; padding:8px; }
-  .nav-link { font-size:1.3em; padding:16px 20px; }
-  .close-btn { font-size:2em; }
+  .menu-btn { font-size:3em; padding:8px; }
+  .nav-link { font-size:1.8em; padding:20px; }
+  .close-btn { font-size:2.5em; }
 }
