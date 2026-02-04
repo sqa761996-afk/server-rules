@@ -7,13 +7,13 @@
 </head>
 <body>
 <header>
-  <div class="menu-btn" id="menuBtn">☰</div>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
   <h1>Respect Town</h1>
 </header>
 
-<div id="nav-overlay" onclick="toggleMenu()"></div>
+<div id="nav-overlay"></div>
+
 <nav class="nav-menu" id="navMenu">
-  <div class="close-btn" onclick="toggleMenu()">×</div>
   <a href="index.html" class="nav-link">القوانين</a>
   <a href="home.html" class="nav-link">الصفحة الرئيسية</a>
   <a href="discord.html" class="nav-link">سيرفر الدسكورد</a>
@@ -22,13 +22,9 @@
 <div class="container">
   <img src="assets/images/IMG_1638.png" class="hero-image">
 
-  <a class="discord-btn" href="https://discord.gg/rr-tt" target="_blank">
-    دخول سيرفر Respect Town
-  </a>
+  <a class="discord-btn" href="https://discord.gg/rr-tt" target="_blank">دخول سيرفر Respect Town</a>
 
-  <div class="member-count">
-    عدد الأعضاء: <span id="memberCount">0</span>
-  </div>
+  <div class="member-count">عدد الأعضاء: <span id="memberCount">0</span></div>
 
   <iframe 
     src="https://discord.com/widget?id=1453314826322317366&theme=dark"
