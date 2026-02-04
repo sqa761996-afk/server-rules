@@ -1,18 +1,19 @@
 /* ======= عام ======= */
 body {
   margin:0;
-  font-family: "Arial", sans-serif;
-  background:#0b0b0b;
-  color:white;
+  font-family:"Arial", sans-serif;
+  background:#0d0d0d; /* أسود أعمق يعطي حياة */
+  color:#eee; /* نص أكثر وضوح */
 }
 
+/* ======= Header ======= */
 header {
   background:#111;
   padding:18px 25px;
   display:flex;
-  justify-content:flex-start; /* زر الثلاث خطوط يسار */
+  justify-content:flex-start;
   align-items:center;
-  border-bottom:4px solid #ff0000;
+  border-bottom:4px solid #e63946; /* أحمر أكثر حيوية */
   position:fixed;
   width:100%;
   top:0;
@@ -21,50 +22,23 @@ header {
 
 h1 {
   font-size:2em;
-  color:#ff0000;
-  margin:0 0 0 20px; /* خلي اسم السيرفر بعد زر الثلاث خطوط */
+  color:#e63946; /* أحمر نابض بالحياة */
+  margin:0 0 0 20px;
 }
 
+/* ======= زر الثلاث خطوط ======= */
 .menu-btn {
-  font-size:2.8em;
+  font-size:5.5em; /* أكبر مرتين ونص تقريبا */
   cursor:pointer;
   color:white;
   transition:0.3s;
-  padding:10px;
+  padding:12px;
+  border:3px solid #fff; /* المربع حوله */
+  border-radius:8px;
 }
 .menu-btn:hover {
-  color:#ff0000;
-}
-
-/* ======= القائمة الجانبية ======= */
-.nav-menu {
-  position:fixed;
-  top:0;
-  left:-280px;
-  width:280px;
-  height:100%;
-  background:#111;
-  transition:0.4s ease;
-  padding-top:90px;
-  z-index:150;
-  box-shadow:5px 0 15px rgba(0,0,0,0.6);
-}
-.nav-menu.open {
-  left:0;
-}
-
-.nav-link {
-  display:block;
-  padding:20px 30px;
-  color:white;
-  text-decoration:none;
-  font-size:1.3em;
-  border-radius:5px;
-  margin:8px 12px;
-  transition:0.3s;
-}
-.nav-link:hover {
-  background:#ff0000;
+  color:#e63946;
+  border-color:#e63946;
 }
 
 /* ======= Overlay عند فتح القائمة ======= */
@@ -79,10 +53,56 @@ h1 {
   z-index:100;
 }
 
-/* ======= محتوى ======= */
+/* ======= القائمة الجانبية ======= */
+.nav-menu {
+  position:fixed;
+  top:0;
+  right:-350px; /* من الجهة اليمنى */
+  width:350px;
+  height:100%;
+  background:#111;
+  transition:0.4s ease;
+  padding-top:90px;
+  z-index:150;
+  box-shadow:-5px 0 15px rgba(0,0,0,0.6);
+}
+.nav-menu.open {
+  right:0;
+}
+
+.nav-link {
+  display:block;
+  padding:30px 25px;
+  color:white;
+  text-decoration:none;
+  font-size:3.5em; /* تكبير 3.5 مرة */
+  border-bottom:2px solid #fff; /* حدود بيضاء تفصل كل خيار */
+  margin:0;
+  transition:0.3s;
+}
+.nav-link:hover {
+  background:#e63946;
+  color:white;
+}
+
+/* زر X لإغلاق القائمة */
+.close-btn {
+  position:absolute;
+  top:20px;
+  left:20px;
+  font-size:3.5em;
+  cursor:pointer;
+  color:white;
+  transition:0.3s;
+}
+.close-btn:hover {
+  color:#e63946;
+}
+
+/* ======= المحتوى ======= */
 .container {
   text-align:center;
-  margin-top:150px; /* زيادة المسافة بسبب header أكبر */
+  margin-top:170px;
   padding:25px;
   max-width:1200px;
   margin-left:auto;
@@ -93,17 +113,17 @@ h1 {
 .hero-image {
   max-width:95%;
   border-radius:18px;
+  box-shadow:0 0 20px rgba(230,57,70,0.7);
 }
 
 /* ======= الترحيب ======= */
 .welcome-text {
-  font-size:2.5em;
-  color:#ff0000;
+  font-size:3em;
+  color:#e63946;
   margin-top:30px;
 }
-
 .welcome-subtext {
-  font-size:1.5em;
+  font-size:1.8em;
   margin-top:18px;
   color:#ccc;
 }
@@ -112,8 +132,8 @@ h1 {
 .section-title {
   margin-top:50px;
   margin-bottom:25px;
-  color:#ff0000;
-  font-size:2em;
+  color:#e63946;
+  font-size:2.5em;
 }
 
 /* ======= بطاقات المستخدمين ======= */
@@ -135,7 +155,7 @@ h1 {
 }
 .user-card:hover {
   transform: translateY(-8px);
-  box-shadow:0 0 40px #ff0000;
+  box-shadow:0 0 40px #e63946;
 }
 
 .avatar {
@@ -144,7 +164,7 @@ h1 {
   margin:0 auto 18px auto;
   border-radius:50%;
   overflow:hidden;
-  border:4px solid #ff0000;
+  border:4px solid #e63946;
 }
 .avatar img {
   width:100%;
@@ -167,7 +187,7 @@ h1 {
 /* ======= زر الدسكورد ======= */
 .discord-btn {
   display:inline-block;
-  background:#ff0000;
+  background:#e63946;
   color:white;
   padding:20px 60px;
   font-size:1.6em;
@@ -178,7 +198,7 @@ h1 {
 }
 .discord-btn:hover {
   transform:translateY(-5px) scale(1.08);
-  box-shadow:0 0 40px #ff0000;
+  box-shadow:0 0 40px #e63946;
 }
 
 /* ======= ويدجت الدسكورد ======= */
@@ -212,7 +232,18 @@ h1 {
   box-shadow: 0 0 22px rgba(0,0,0,0.5);
 }
 
-/* ======= Responsive للجوال ======= */
+.rule-card h3 {
+  font-size:1.8em;
+  color:#e63946;
+  margin-bottom:6px;
+}
+
+.rule-card p {
+  font-size:1.2em;
+  color:#eee;
+}
+
+/* ======= Responsive ======= */
 @media (max-width:600px){
   .welcome-text { font-size:2em; }
   .welcome-subtext { font-size:1.2em; }
@@ -221,5 +252,7 @@ h1 {
   .discord-btn { padding:14px 40px; font-size:1.3em; }
   .rule-card { font-size:1.1em; padding:18px 22px; }
   h1 { font-size:1.7em; }
-  .menu-btn { font-size:2.5em; padding:8px; }
+  .menu-btn { font-size:3.5em; padding:8px; }
+  .close-btn { font-size:2.5em; left:15px; top:15px; }
+  .nav-link { font-size:2em; padding:25px 20px; }
 }
