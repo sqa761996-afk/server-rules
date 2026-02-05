@@ -7,24 +7,23 @@ body {
 }
 
 header {
-  display:flex;
-  flex-direction:row;
-  justify-content:space-between; /* العنوان على اليسار، الزر على اليمين */
-  align-items:center;
   background:#1a1a1a;
   padding:18px 25px;
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
   border-bottom:4px solid #bb2e3d;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 200;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:200;
+  box-shadow:0 4px 15px rgba(0,0,0,0.6);
 }
 
 h1 {
   font-size:2em;
   color:#bb2e3d;
-  margin:0;
+  margin:0 0 0 20px;
 }
 
 .menu-btn {
@@ -243,35 +242,10 @@ h1 {
   line-height:1.7em;
   color:#fff;
   box-shadow: 0 0 22px rgba(0,0,0,0.5);
-  position: relative;
 }
-
 .rule-card h3 {
-  margin-bottom:0;
+  margin-bottom:10px;
   color:#bb2e3d;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.expand-btn {
-  font-size:1.6em;
-  background:#bb2e3d;
-  color:white;
-  border:none;
-  border-radius:8px;
-  padding:4px 12px;
-  cursor:pointer;
-  transition:0.3s;
-}
-.expand-btn:hover {
-  background:#ff4d4d;
-}
-
-.rule-description {
-  display:none;
-  margin-top:12px;
-  text-align:right;
 }
 
 /* ======= Responsive للجوال ======= */
@@ -280,10 +254,4 @@ h1 {
   .welcome-subtext { font-size:1.2em; }
   .user-card { width:180px; padding:22px; }
   .avatar { width:100px; height:100px; }
-  .discord-btn { padding:14px 40px; font-size:1.3em; }
-  .rule-card { font-size:1.1em; padding:18px 22px; }
-  h1 { font-size:1.7em; }
-  .menu-btn { font-size:3em; padding:8px; }
-  .nav-link { font-size:1.5em; padding:18px 20px; }
-  .close-btn { font-size:2.5em; }
-}
+ 
