@@ -32,6 +32,9 @@ h1 {
   padding: 10px;
   border: 2px solid #bb2e3d;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-btn:hover {
@@ -197,7 +200,7 @@ h1 {
   border: none;
 }
 
-/* ======= القوانين (بطاقات + توسعة) ======= */
+/* ======= القوانين (بطاقات + زر + وصف) ======= */
 .rule-card {
   background: #1a1a1a;
   padding: 20px 25px;
@@ -216,11 +219,24 @@ h1 {
 }
 
 .rule-toggle {
-  background: none;
-  border: none;
+  background: #bb2e3d;
   color: white;
-  font-size: 24px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.rule-toggle:hover {
+  background: #ff4d4d;
+  transform: scale(1.1);
 }
 
 .rule-description {
