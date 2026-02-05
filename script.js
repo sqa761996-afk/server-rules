@@ -1,20 +1,16 @@
-// زر الثلاث خطوط للقائمة
+// ======= زر الثلاث خطوط للقائمة =======
 function toggleMenu(){
   const menu = document.getElementById('navMenu');
   const overlay = document.getElementById('nav-overlay');
   menu.classList.toggle('open');
-  overlay.style.display = menu.classList.contains('open') ? 'block' : 'none';
+  if(menu.classList.contains('open')){
+    overlay.style.display = 'block';
+  } else {
+    overlay.style.display = 'none';
+  }
 }
 
-// Toggle القوانين
-document.querySelectorAll(".toggle-btn").forEach(btn=>{
-  btn.addEventListener("click", ()=>{
-    const desc = btn.parentElement.nextElementSibling;
-    desc.style.display = (desc.style.display === "block") ? "none" : "block";
-  });
-});
-
-// عداد أعضاء الدسكورد
+// ======= عداد أعضاء الدسكورد (صفحة discord.html) =======
 const memberCountSpan = document.getElementById('memberCount');
 if(memberCountSpan){
   fetch("https://discord.com/api/v10/guilds/1453314826322317366/widget.json")
@@ -22,11 +18,16 @@ if(memberCountSpan){
       if(!res.ok) throw new Error("API error");
       return res.json();
     })
-    .then(data => { memberCountSpan.textContent = data.presence_count; })
-    .catch(err => { memberCountSpan.textContent = "غير متاح"; });
+    .then(data => {
+      memberCountSpan.textContent = data.presence_count;
+    })
+    .catch(err => {
+      console.log("Discord API error:", err);
+      memberCountSpan.textContent = "غير متاح";
+    });
 }
 
-// Animations سلسة
+// ======= Animations سلسة =======
 document.addEventListener("DOMContentLoaded", () => {
   const animatedElements = document.querySelectorAll(
     ".user-card, .rule-card, .hero-image, .welcome-text, .welcome-subtext, .discord-widget, .discord-btn"
@@ -39,5 +40,18 @@ document.addEventListener("DOMContentLoaded", () => {
       el.style.transform = "translateY(0)";
       el.style.transition = "all 0.6s ease";
     }, 150 * i);
+  });
+
+  // ======= زر + لتوسيع القوانين =======
+  const expandButtons = document.querySelectorAll(".expand-btn");
+  expandButtons.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const desc = btn.parentElement.nextElementSibling;
+      if(desc.style.display === "block"){
+        desc.style.display = "none";
+      } else {
+        desc.style.display = "block";
+      }
+    });
   });
 });
