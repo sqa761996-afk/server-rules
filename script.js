@@ -60,3 +60,5 @@ document.querySelectorAll('.rule-toggle').forEach(btn => {
     }
   });
 });
+
+});
