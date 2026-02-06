@@ -255,3 +255,27 @@ h1 {
   .user-card { width:180px; padding:22px; }
   .avatar { width:100px; height:100px; }
  
+.rule-card {
+  background: #111;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.rule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rule-toggle {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.rule-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
