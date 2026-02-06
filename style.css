@@ -1,7 +1,7 @@
 /* ======= عام ======= */
 body {
   margin:0;
-  font-family:"Arial",sans-serif;
+  font-family: "Arial", sans-serif;
   background:#0f0f0f;
   color:white;
 }
@@ -43,12 +43,12 @@ h1 {
   border-color:#ff4d4d;
 }
 
-/* ======= القائمة الجانبية (تغطية 95%) ======= */
+/* ======= القائمة الجانبية ======= */
 .nav-menu {
   position:fixed;
   top:0;
-  right:-95%;
-  width:95%;
+  right:-75%;
+  width:75%;
   height:100%;
   background:#1a1a1a;
   transition:0.5s ease;
@@ -61,34 +61,31 @@ h1 {
   right:0;
 }
 
-.nav-top {
+.server-icon-container {
   display:flex;
-  flex-direction:column;
-  align-items:center;
+  justify-content:center;
+  margin-bottom:25px;
+}
+
+.server-icon {
+  width:250px;
+  height:250px;
+  border-radius:50%;
+  border:1px solid #bb2e3d;
 }
 
 .nav-link {
   display:block;
-  padding:20px 30px;
+  padding:25px 30px;
   color:white;
   text-decoration:none;
   font-size:1.8em;
   border-bottom:2px solid rgba(255,255,255,0.2);
   transition:0.3s;
-  width:100%;
-  text-align:center;
 }
 .nav-link:hover {
   background:#bb2e3d;
   border-color:white;
-}
-
-.server-logo {
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  margin-bottom:20px;
-  border:3px solid #bb2e3d;
 }
 
 /* زر اغلاق */
@@ -101,7 +98,7 @@ h1 {
   cursor:pointer;
 }
 
-/* Overlay */
+/* ======= Overlay عند فتح القائمة ======= */
 #nav-overlay {
   position:fixed;
   top:0;
@@ -123,13 +120,13 @@ h1 {
   margin-right:auto;
 }
 
-/* الصور */
+/* ======= الصور ======= */
 .hero-image {
   max-width:95%;
   border-radius:18px;
 }
 
-/* الترحيب */
+/* ======= الترحيب ======= */
 .welcome-text {
   font-size:2.5em;
   color:#bb2e3d;
@@ -142,7 +139,7 @@ h1 {
   color:#ccc;
 }
 
-/* العناوين */
+/* ======= عناوين الأقسام ======= */
 .section-title {
   margin-top:50px;
   margin-bottom:25px;
@@ -150,7 +147,7 @@ h1 {
   font-size:2em;
 }
 
-/* بطاقات المستخدمين */
+/* ======= بطاقات المستخدمين (home.html) ======= */
 .cards {
   display:flex;
   justify-content:center;
@@ -172,7 +169,7 @@ h1 {
   box-shadow:0 0 40px #bb2e3d;
 }
 
-.user-card.dev-card {
+.user-card.website-dev {
   border:2px solid #8a2be2;
   box-shadow:0 0 22px rgba(138,43,226,0.7);
 }
@@ -185,9 +182,10 @@ h1 {
   overflow:hidden;
   border:4px solid #bb2e3d;
 }
-.user-card.dev-card .avatar {
+.user-card.website-dev .avatar {
   border-color:#8a2be2;
 }
+
 .avatar img {
   width:100%;
   height:100%;
@@ -200,16 +198,18 @@ h1 {
   margin-bottom:6px;
   color:white;
 }
-.user-card.dev-card span {
+
+.user-card.website-dev span {
   color:#8a2be2;
   font-weight:bold;
   text-shadow:0 0 5px #8a2be2;
 }
+
 .user-card small {
   color:#aaa;
 }
 
-/* زر الدسكورد */
+/* ======= زر الدسكورد ======= */
 .discord-btn {
   display:inline-block;
   background:#bb2e3d;
@@ -226,7 +226,7 @@ h1 {
   box-shadow:0 0 40px #bb2e3d;
 }
 
-/* ويدجت الدسكورد */
+/* ======= ويدجت الدسكورد ======= */
 .discord-widget {
   width:100%;
   max-width:400px;
@@ -237,14 +237,14 @@ h1 {
   overflow:hidden;
 }
 
-/* عداد الأعضاء */
+/* ======= عداد الأعضاء ======= */
 .member-count {
   font-size:1.5em;
   margin:20px 0;
   color:white;
 }
 
-/* القوانين */
+/* ======= القوانين ======= */
 .rule-card {
   background: rgba(26,26,26,0.95);
   padding:18px 22px;
@@ -265,7 +265,9 @@ h1 {
   cursor:pointer;
 }
 
-.rule-header .rule-text {
+.rule-header h3 {
+  margin:0;
+  color:#bb2e3d;
   text-align:right; /* القانون يمين */
   flex:1;
 }
@@ -289,7 +291,7 @@ h1 {
   max-height:0;
   overflow:hidden;
   transition:max-height 0.5s ease;
-  text-align:right;
+  text-align:right; /* محتوى القانون يمين */
   margin-top:8px;
 }
 
@@ -306,5 +308,5 @@ h1 {
   .nav-link { font-size:1.5em; padding:18px 20px; }
   .close-btn { font-size:2.5em; }
   .rule-toggle { font-size:1.1em; padding:5px 10px; }
-  .server-logo { width:100px; height:100px; }
+  .server-icon { width:80px; height:80px; }
 }
