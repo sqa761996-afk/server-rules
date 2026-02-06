@@ -13,63 +13,116 @@
 
 <div id="nav-overlay" onclick="toggleMenu()"></div>
 <nav class="nav-menu" id="navMenu">
-  <span class="close-btn" onclick="toggleMenu()">×</span>
-  <a href="index.html" class="nav-link">القوانين</a>
-  <a href="home.html" class="nav-link">الصفحة الرئيسية</a>
-  <a href="discord.html" class="nav-link">سيرفر الدسكورد</a>
+  <div class="nav-top">
+    <img src="https://images-ext-1.discordapp.net/external/phV3oX1LjnlmULQ-8SOr9HuqXLd_Eh_n-qpM0G3J_lQ/%3Fsize%3D1024/https/cdn.discordapp.com/icons/1453314826322317366/8ee7299d844f18281346b1af48dbeb54.png" class="server-logo">
+    <a href="index.html" class="nav-link">القوانين</a>
+    <a href="home.html" class="nav-link">الصفحة الرئيسية</a>
+    <a href="discord.html" class="nav-link">سيرفر الدسكورد</a>
+  </div>
 </nav>
 
 <div class="container">
   <h2 class="page-title">قوانين السيرفر</h2>
-  
+
+  <!-- بطاقة قانون -->
   <div class="rule-card">
-    <h3>قوانين الحياة الجديدة - RB</h3>
-    <p>في حال تم إسقاط شخص بالكامل أو فقدان وعيه لا يستطيع الكلام، الحركة، أو القيام بأي فعل. إذا تم إنعاشه من قبل مسعفين يمكنه تذكر الأحداث. في حال استخدام إبرة "في العيادة الخاصة" من لاعب لديه عداوة معك، لا يمكنك تذكر أي أحداث سابقة بما فيها العداوات أو النزاعات.</p>
+    <div class="rule-header">
+      <span class="rule-text">قوانين الحياة الجديدة - RB</span>
+      <button class="rule-toggle">+</button>
+    </div>
+    <div class="rule-content">
+      في حال تم إسقاط شخص بالكامل أو فقدان وعيه لا يستطيع الكلام، الحركة، أو القيام بأي فعل. إذا تم إنعاشه من قبل مسعفين يمكنه تذكر الأحداث. في حال استخدام إبرة "في العيادة الخاصة" من لاعب لديه عداوة معك، لا يمكنك تذكر أي أحداث سابقة بما فيها العداوات أو النزاعات.
+    </div>
   </div>
 
   <div class="rule-card">
-    <h3>الباور جيمنج - PowerGaming</h3>
-    <p>استخدام وسائل غير موجودة في اللعبة للحصول على ميزة أو لتجاوز قوانين العالم الواقعية. أمثلة: القدرة على فتح أقفال بدون مفاتيح، أو تنفيذ حركات قتالية خارقة لا تتوافق مع اللعبة. كل تصرف مشابه يعتبر مخالفة.</p>
+    <div class="rule-header">
+      <span class="rule-text">الباور جيمنج - PowerGaming</span>
+      <button class="rule-toggle">+</button>
+    </div>
+    <div class="rule-content">
+      استخدام وسائل غير موجودة في اللعبة للحصول على ميزة أو لتجاوز قوانين العالم الواقعية. أمثلة: القدرة على فتح أقفال بدون مفاتيح، أو تنفيذ حركات قتالية خارقة لا تتوافق مع اللعبة. كل تصرف مشابه يعتبر مخالفة.
+    </div>
   </div>
 
   <div class="rule-card">
-    <h3>الخوف على الحياة - NVL (No Violence Life)</h3>
-    <p>عدم إظهار الخوف بشكل واقعي عند التهديد بالأسلحة أو التعرض للخطر يعتبر مخالف. يجب أن يكون الخوف على الحياة حقيقي، بما يعكس ردة فعل طبيعية أمام الخطر.</p>
+    <div class="rule-header">
+      <span class="rule-text">الخوف على الحياة - NVL (No Violence Life)</span>
+      <button class="rule-toggle">+</button>
+    </div>
+    <div class="rule-content">
+      عدم إظهار الخوف بشكل واقعي عند التهديد بالأسلحة أو التعرض للخطر يعتبر مخالف. يجب أن يكون الخوف على الحياة حقيقي، بما يعكس ردة فعل طبيعية أمام الخطر.
+    </div>
   </div>
 
   <div class="rule-card">
-    <h3>الميتا جيمنج - Metagaming</h3>
-    <p>استخدام معلومات حصلت عليها من خارج اللعبة (مثلاً من بث مباشر، ديسكورد، يوتيوب) داخل اللعبة يعتبر مخالفة. المعلومات يجب أن تكون متوفرة فقط لشخصيتك داخل اللعبة.</p>
+    <div class="rule-header">
+      <span class="rule-text">الميتا جيمنج - Metagaming</span>
+      <button class="rule-toggle">+</button>
+    </div>
+    <div class="rule-content">
+      استخدام معلومات حصلت عليها من خارج اللعبة (مثلاً من بث مباشر، ديسكورد، يوتيوب) داخل اللعبة يعتبر مخالفة. المعلومات يجب أن تكون متوفرة فقط لشخصيتك داخل اللعبة.
+    </div>
   </div>
 
   <div class="rule-card">
-    <h3>القتل العشوائي - RDM (Random Death Match)</h3>
-    <p>قتل الأشخاص بلا سبب أو تهديد مسبق، أو بطريقة عشوائية، يعتبر مخالفة واضحة. يجب احترام حياة الشخصيات الأخرى في اللعبة.</p>
+    <div class="rule-header">
+      <span class="rule-text">القتل العشوائي - RDM (Random Death Match)</span>
+      <button class="rule-toggle">+</button>
+    </div>
+    <div class="rule-content">
+      قتل الأشخاص بلا سبب أو تهديد مسبق، أو بطريقة عشوائية، يعتبر مخالفة واضحة. يجب احترام حياة الشخصيات الأخرى في اللعبة.
+    </div>
   </div>
 
   <div class="rule-card">
-    <h3>قانون تقدير الحياة - NWL (New World Life)</h3>
-    <p>الحفاظ على حياتك وحياة الآخرين واجب أساسي. لا تهدد أو تستهين بحياة الآخرين. لا تقاوم مجرم أو شرطي مسلح إلا عند الضرورة. يجب التفاوض وحل النزاعات بالكلام قبل أي عمل يعرض حياة الآخرين للخطر.</p>
+    <div class="rule-header">
+      <span class="rule-text">قانون تقدير الحياة - NWL (New World Life)</span>
+      <button class="rule-toggle">+</button>
+    </div>
+    <div class="rule-content">
+      الحفاظ على حياتك وحياة الآخرين واجب أساسي. لا تهدد أو تستهين بحياة الآخرين. لا تقاوم مجرم أو شرطي مسلح إلا عند الضرورة. يجب التفاوض وحل النزاعات بالكلام قبل أي عمل يعرض حياة الآخرين للخطر.
+    </div>
   </div>
 
   <div class="rule-card">
-    <h3>الاتفاقيات خارج الرول بلاي</h3>
-    <p>أي اتفاق يتم خارج اللعبة (مثل الديسكورد أو خارجه) لتسهيل أحداث داخل اللعبة يعتبر مخالف ويمنع تطبيقه.</p>
+    <div class="rule-header">
+      <span class="rule-text">الاتفاقيات خارج الرول بلاي</span>
+      <button class="rule-toggle">+</button>
+    </div>
+    <div class="rule-content">
+      أي اتفاق يتم خارج اللعبة (مثل الديسكورد أو خارجه) لتسهيل أحداث داخل اللعبة يعتبر مخالف ويمنع تطبيقه.
+    </div>
   </div>
 
   <div class="rule-card">
-    <h3>الإهانة للشخص المسقط</h3>
-    <p>يمنع تمامًا إهانة أي لاعب تم إسقاطه أو فقد وعيه خلال اللعبة. الاحترام واجب دائمًا.</p>
+    <div class="rule-header">
+      <span class="rule-text">الإهانة للشخص المسقط</span>
+      <button class="rule-toggle">+</button>
+    </div>
+    <div class="rule-content">
+      يمنع تمامًا إهانة أي لاعب تم إسقاطه أو فقد وعيه خلال اللعبة. الاحترام واجب دائمًا.
+    </div>
   </div>
 
   <div class="rule-card">
-    <h3>بناء شخصية حقيقية - Roleplay Character</h3>
-    <p>يجب على كل لاعب بناء شخصية فريدة له، وتمثيلها بجدية في الأقوال والأفعال داخل اللعبة، مع الالتزام بالواقعية والخيال المنطقي.</p>
+    <div class="rule-header">
+      <span class="rule-text">بناء شخصية حقيقية - Roleplay Character</span>
+      <button class="rule-toggle">+</button>
+    </div>
+    <div class="rule-content">
+      يجب على كل لاعب بناء شخصية فريدة له، وتمثيلها بجدية في الأقوال والأفعال داخل اللعبة، مع الالتزام بالواقعية والخيال المنطقي.
+    </div>
   </div>
 
   <div class="rule-card">
-    <h3>ملفات أو أدوات مضرة باللعب</h3>
-    <p>يحظر استخدام أي ملفات أو أدوات تؤثر سلبًا على اللعب أو تمنح ميزات غير قانونية. كل استخدام يعتبر مخالفة ويعاقب عليها النظام.</p>
+    <div class="rule-header">
+      <span class="rule-text">ملفات أو أدوات مضرة باللعب</span>
+      <button class="rule-toggle">+</button>
+    </div>
+    <div class="rule-content">
+      يحظر استخدام أي ملفات أو أدوات تؤثر سلبًا على اللعب أو تمنح ميزات غير قانونية. كل استخدام يعتبر مخالفة ويعاقب عليها النظام.
+    </div>
   </div>
 
 </div>
