@@ -42,16 +42,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 150 * i);
   });
 
-  // ======= زر + لتوسيع القوانين =======
-  const expandButtons = document.querySelectorAll(".expand-btn");
-  expandButtons.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      const desc = btn.parentElement.nextElementSibling;
-      if(desc.style.display === "block"){
-        desc.style.display = "none";
-      } else {
-        desc.style.display = "block";
-      }
+document.querySelectorAll('.rule-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.rule-card');
+    const content = card.querySelector('.rule-content');
+
+    document.querySelectorAll('.rule-content').forEach(c => {
+      if (c !== content) c.style.maxHeight = null;
     });
+
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+      btn.textContent = '+';
+    } else {
+      content.style.maxHeight = content.scrollHeight + 'px';
+      btn.textContent = '−';
+    }
   });
 });
