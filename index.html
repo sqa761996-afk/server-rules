@@ -1,135 +1,278 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>Respect Town | القوانين</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respect Town RP | رسبكت تاون</title>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #0a0a0b;
+            --surface-glass: rgba(22, 22, 26, 0.7);
+            --accent-silver: #ffffff;
+            --text-gray: #b0b0b5;
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+
+        body {
+            font-family: 'Almarai', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--accent-silver);
+            height: 100vh;
+            overflow: hidden;
+            background-image: radial-gradient(circle at 10% 20%, #16161d 0%, #0a0a0b 100%);
+        }
+
+        /* المنيو */
+        .nav-toggle {
+            position: fixed; top: 20px; left: 20px; z-index: 2000; cursor: pointer;
+            padding: 12px; background: rgba(255,255,255,0.05); border-radius: 12px;
+            backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);
+        }
+        @media (min-width: 768px) { .nav-toggle { top: 40px; left: 40px; } }
+
+        .nav-toggle div { width: 25px; height: 2px; background: white; margin: 5px 0; transition: 0.3s; }
+
+        .overlay-menu {
+            position: fixed; inset: 0; background: rgba(5,5,5,0.98); z-index: 1500;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            opacity: 0; pointer-events: none; transition: 0.6s var(--ease-out);
+        }
+        .overlay-menu.active { opacity: 1; pointer-events: all; }
+        .overlay-menu a {
+            font-size: 1.8rem; font-weight: 800; color: white; text-decoration: none;
+            margin: 10px; transition: 0.4s; transform: translateY(30px);
+        }
+        @media (min-width: 768px) { .overlay-menu a { font-size: 2.8rem; margin: 15px; } }
+
+        .overlay-menu.active a { transform: translateY(0); }
+
+        /* الأقسام */
+        .section {
+            position: absolute; inset: 0; display: none;
+            flex-direction: column; align-items: center; justify-content: center;
+            padding: 20px; text-align: center;
+        }
+        @media (min-width: 768px) { .section { padding: 40px; } }
+
+        .section.active { display: flex; animation: slideUp 0.8s var(--ease-out) forwards; }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* الشعار */
+        .logo-wrapper {
+            width: 140px; height: 140px; border-radius: 35px;
+            overflow: hidden; margin-bottom: 20px;
+            border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            animation: float 5s ease-in-out infinite;
+            background: #1a1a1e; display: flex; align-items: center; justify-content: center;
+        }
+        @media (min-width: 768px) { .logo-wrapper { width: 190px; height: 190px; border-radius: 45px; } }
+
+        .logo-img { width: 100%; height: 100%; object-fit: cover; }
+        .main-title { font-size: 2rem; font-weight: 800; margin-bottom: 5px; }
+        @media (min-width: 768px) { .main-title { font-size: 4.5rem; } }
+
+        /* القوانين */
+        .rules-container {
+            width: 100%; max-width: 850px; max-height: 60vh;
+            overflow-y: auto; padding: 5px;
+        }
+        .rule-item {
+            background: var(--surface-glass); margin-bottom: 10px; border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05); text-align: right;
+        }
+        .rule-header { padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        @media (min-width: 768px) { .rule-header { padding: 22px 30px; } }
+        
+        .rule-header h3 { font-size: 0.95rem; font-weight: 700; }
+        @media (min-width: 768px) { .rule-header h3 { font-size: 1.1rem; } }
+
+        .rule-body { max-height: 0; overflow: hidden; transition: 0.5s var(--ease-out); padding: 0 20px; color: var(--text-gray); font-size: 0.85rem; line-height: 1.6; }
+        @media (min-width: 768px) { .rule-body { font-size: 1rem; padding: 0 30px; line-height: 1.8; } }
+
+        .rule-item.open .rule-body { max-height: 400px; padding-bottom: 15px; }
+        @media (min-width: 768px) { .rule-item.open .rule-body { padding-bottom: 25px; } }
+
+        /* من نحن - المطور */
+        .about-cards {
+            display: grid; grid-template-columns: 1fr;
+            gap: 15px; width: 100%; max-width: 1000px;
+            perspective: 1000px; /* للأنيميشن ثلاثي الأبعاد */
+        }
+        @media (min-width: 768px) { .about-cards { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+
+        .card { 
+            background: var(--surface-glass); 
+            padding: 20px; 
+            border-radius: 18px; 
+            border: 1px solid rgba(255,255,255,0.05); 
+            transition: transform 0.1s ease, box-shadow 0.3s ease; /* أنيميشن سلس */
+            position: relative;
+            overflow: hidden;
+        }
+        @media (min-width: 768px) { .card { padding: 40px 25px; border-radius: 24px; } }
+        
+        .card:hover {
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .card i { font-size: 1.5rem; margin-bottom: 10px; color: #fff; }
+        @media (min-width: 768px) { .card i { font-size: 2.2rem; margin-bottom: 20px; } }
+
+        .card h4 { font-size: 1.1rem; margin-bottom: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+        .card p { font-size: 0.8rem; color: var(--text-gray); line-height: 1.6; }
+        @media (min-width: 768px) { .card h4 { font-size: 1.3rem; } .card p { font-size: 0.9rem; line-height: 1.7; } }
+
+        /* الديسكورد */
+        .discord-btn {
+            background: white; color: black; padding: 15px 35px;
+            border-radius: 12px; text-decoration: none; font-weight: 800;
+            margin-top: 20px; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px;
+        }
+        @media (min-width: 768px) { .discord-btn { padding: 18px 50px; font-size: 1rem; margin-top: 30px; } }
+
+        ::-webkit-scrollbar { width: 3px; }
+        ::-webkit-scrollbar-thumb { background: #444; border-radius: 10px; }
+    </style>
 </head>
 <body>
-<header>
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  <h1>Respect Town</h1>
-</header>
 
-<div id="nav-overlay" onclick="toggleMenu()"></div>
-<nav class="nav-menu" id="navMenu">
-  <!-- صورة السيرفر فوق الأزرار -->
-  <div class="server-icon-container">
-    <img src="https://images-ext-1.discordapp.net/external/phV3oX1LjnlmULQ-8SOr9HuqXLd_Eh_n-qpM0G3J_lQ/%3Fsize%3D1024/https/cdn.discordapp.com/icons/1453314826322317366/8ee7299d844f18281346b1af48dbeb54.png" class="server-icon">
-  </div>
+    <div class="nav-toggle" onclick="toggleMenu()">
+        <div></div><div style="width: 15px;"></div><div></div>
+    </div>
 
-  <!-- أزرار القائمة -->
-  <a href="index.html" class="nav-link">القوانين</a>
-  <a href="home.html" class="nav-link">الصفحة الرئيسية</a>
-  <a href="discord.html" class="nav-link">سيرفر الدسكورد</a>
-</nav>
+    <div class="overlay-menu" id="menu">
+        <a href="#" onclick="showSection('home')">الرئيسية</a>
+        <a href="#" onclick="showSection('rules')">القوانين</a>
+        <a href="#" onclick="showSection('about')">من نحن</a>
+        <a href="#" onclick="showSection('discord')">المجتمع</a>
+    </div>
 
-<div class="container">
-  <h2 class="page-title">قوانين السيرفر</h2>
+    <section id="home" class="section active">
+        <div class="logo-wrapper">
+            <img src="https://cdn.discordapp.com/icons/1453314826322317366/27c5ebd8507d99be8e938714dca7296c.png?size=512" class="logo-img" onerror="this.src='https://ui-avatars.com/api/?name=Respect+Town&background=1a1a1e&color=fff&size=512'">
+        </div>
+        <h1 class="main-title">RESPECT TOWN</h1>
+        <p style="color:var(--text-gray); font-size: 0.9rem; font-weight: 300;">رسبكت تاون: واقعية يسيجها الاحترام، واحترافية لا تعرف المساومة.
+</p>
+    </section>
 
-  <!-- القوانين -->
-  <div class="rule-card">
-    <div class="rule-header">
-      <span class="rule-text">قوانين الحياة الجديدة - RB</span>
-      <button class="rule-toggle">+</button>
-    </div>
-    <div class="rule-content">
-      في حال تم إسقاط شخص بالكامل أو فقدان وعيه لا يستطيع الكلام، الحركة، أو القيام بأي فعل. إذا تم إنعاشه من قبل مسعفين يمكنه تذكر الأحداث. في حال استخدام إبرة "في العيادة الخاصة" من لاعب لديه عداوة معك، لا يمكنك تذكر أي أحداث سابقة بما فيها العداوات أو النزاعات.
-    </div>
-  </div>
+    <section id="rules" class="section">
+        <h2 style="margin-bottom: 20px; font-size: 1.5rem;">دستور المدينة</h2>
+        <div class="rules-container">
+            <div class="rule-item" onclick="this.classList.toggle('open')">
+                <div class="rule-header"><h3>Rule 1 | قانون الحياة الجديدة</h3><i class="fas fa-plus"></i></div>
+                <div class="rule-body">في حال تم إسقاط شخص بالكامل أو فقدان وعيه لا يستطيع الكلام، الحركة، أو القيام بأي فعل. إذا تم إنعاشه من قبل مسعفين يمكنه تذكر الأحداث. في حال استخدام إبرة "في العيادة الخاصة" من لاعب لديه عداوة معك، لا يمكنك تذكر أي أحداث سابقة بما فيها العداوات أو النزاعات.</div>
+            </div>
+            <div class="rule-item" onclick="this.classList.toggle('open')">
+                <div class="rule-header"><h3>Rule 2 | الباور جيمنج</h3><i class="fas fa-plus"></i></div>
+                <div class="rule-body">استخدام وسائل غير موجودة في اللعبة للحصول على ميزة أو لتجاوز قوانين العالم الواقعية. أمثلة: القدرة على فتح أقفال بدون مفاتيح، أو تنفيذ حركات قتالية خارقة لا تتوافق مع اللعبة.</div>
+            </div>
+            <div class="rule-item" onclick="this.classList.toggle('open')">
+                <div class="rule-header"><h3>Rule 3 | الخوف على الحياة</h3><i class="fas fa-plus"></i></div>
+                <div class="rule-body">عدم إظهار الخوف بشكل واقعي عند التهديد بالأسلحة أو التعرض للخطر يعتبر مخالف. يجب أن يكون الخوف على الحياة حقيقي، بما يعكس ردة فعل طبيعية أمام الخطر.</div>
+            </div>
+            <div class="rule-item" onclick="this.classList.toggle('open')">
+                <div class="rule-header"><h3>Rule 4 | الميتا جيمنج</h3><i class="fas fa-plus"></i></div>
+                <div class="rule-body">استخدام معلومات حصلت عليها من خارج اللعبة (بث مباشر، ديسكورد، إلخ) داخل اللعبة يعتبر مخالفة. المعلومات يجب أن تكون متوفرة فقط لشخصيتك داخل اللعبة.</div>
+            </div>
+            <div class="rule-item" onclick="this.classList.toggle('open')">
+                <div class="rule-header"><h3>Rule 5 | القتل العشوائي</h3><i class="fas fa-plus"></i></div>
+                <div class="rule-body">قتل الأشخاص بلا سبب أو تهديد مسبق، أو بطريقة عشوائية، يعتبر مخالفة واضحة. يجب احترام حياة الشخصيات الأخرى في اللعبة.</div>
+            </div>
+            <div class="rule-item" onclick="this.classList.toggle('open')">
+                <div class="rule-header"><h3>Rule 6 | قانون تقدير الحياة</h3><i class="fas fa-plus"></i></div>
+                <div class="rule-body">الحفاظ على حياتك وحياة الآخرين واجب أساسي. لا تقاوم مجرم أو شرطي مسلح إلا عند الضرورة. يجب التفاوض وحل النزاعات بالكلام قبل أي عمل خطر.</div>
+            </div>
+            <div class="rule-item" onclick="this.classList.toggle('open')">
+                <div class="rule-header"><h3>Rule 7 | الاتفاقيات الخارجية</h3><i class="fas fa-plus"></i></div>
+                <div class="rule-body">أي اتفاق يتم خارج اللعبة (مثل الديسكورد) لتسهيل أحداث داخل اللعبة يعتبر مخالف ويمنع تطبيقه.</div>
+            </div>
+            <div class="rule-item" onclick="this.classList.toggle('open')">
+                <div class="rule-header"><h3>Rule 8 | الإهانة للشخص المسقط</h3><i class="fas fa-plus"></i></div>
+                <div class="rule-body">يمنع تمامًا إهانة أي لاعب تم إسقاطه أو فقد وعيه خلال اللعبة. الاحترام واجب دائمًا.</div>
+            </div>
+            <div class="rule-item" onclick="this.classList.toggle('open')">
+                <div class="rule-header"><h3>Rule 9 | بناء الشخصية</h3><i class="fas fa-plus"></i></div>
+                <div class="rule-body">يجب على كل لاعب بناء شخصية فريدة له، وتمثيلها بجدية في الأقوال والأفعال داخل اللعبة، مع الالتزام بالواقعية والخيال المنطقي.</div>
+            </div>
+            <div class="rule-item" onclick="this.classList.toggle('open')">
+                <div class="rule-header"><h3>Rule 10 | أدوات اللعب الضارة</h3><i class="fas fa-plus"></i></div>
+                <div class="rule-body">يحظر استخدام أي ملفات أو أدوات تؤثر سلبًا على اللعب أو تمنح ميزات غير قانونية. كل استخدام يعتبر مخالفة ويعاقب عليها النظام.</div>
+            </div>
+        </div>
+    </section>
 
-  <div class="rule-card">
-    <div class="rule-header">
-      <span class="rule-text">الباور جيمنج - PowerGaming</span>
-      <button class="rule-toggle">+</button>
-    </div>
-    <div class="rule-content">
-      استخدام وسائل غير موجودة في اللعبة للحصول على ميزة أو لتجاوز قوانين العالم الواقعية. أمثلة: القدرة على فتح أقفال بدون مفاتيح، أو تنفيذ حركات قتالية خارقة لا تتوافق مع اللعبة. كل تصرف مشابه يعتبر مخالفة.
-    </div>
-  </div>
+    <section id="about" class="section">
+        <h2 style="margin-bottom: 25px; font-size: 1.5rem;">من نحن</h2>
+        <div class="about-cards">
+            <div class="card" onmousemove="processTilt(event, this)" onmouseleave="resetTilt(this)">
+                <i class="fas fa-theater-masks"></i>
+                <h4>مسرح الواقع</h4>
+                <p>رسبكت تاون ليست مجرد سيرفر، بل هي مدينة متكاملة صُممت لتكون المسرح الأرقى لتقمص الأدوار (Roleplay). نحن نوفر لك البيئة، وأنت تكتب القصة بشخصيتك الفريدة.</p>
+            </div>
+            <div class="card" onmousemove="processTilt(event, this)" onmouseleave="resetTilt(this)">
+                <i class="fas fa-balance-scale"></i>
+                <h4>ميثاق النخبة</h4>
+                <p>الاحترام هو عملتنا الوحيدة. نطبق معايير صارمة لضمان جودة اللعب وعدالة التعامل، حيث لا مكان للمخربين، والجميع يخضع للدستور دون استثناء.</p>
+            </div>
+            <div class="card" onmousemove="processTilt(event, this)" onmouseleave="resetTilt(this)">
+                <i class="fas fa-microchip"></i>
+                <h4>الابتكار المستمر</h4>
+                <p>بأيدي مطورينا، نقدم برمجيات وأنظمة حصرية لن تجدها في مكان آخر، هدفها تعزيز الانغماس في الواقعية وضمان تجربة سلسة وبأعلى أداء تقني.</p>
+            </div>
+        </div>
+    </section>
 
-  <div class="rule-card">
-    <div class="rule-header">
-      <span class="rule-text">الخوف على الحياة - NVL (No Violence Life)</span>
-      <button class="rule-toggle">+</button>
-    </div>
-    <div class="rule-content">
-      عدم إظهار الخوف بشكل واقعي عند التهديد بالأسلحة أو التعرض للخطر يعتبر مخالف. يجب أن يكون الخوف على الحياة حقيقي، بما يعكس ردة فعل طبيعية أمام الخطر.
-    </div>
-  </div>
+    <section id="discord" class="section">
+        <i class="fab fa-discord" style="font-size: 4rem; margin-bottom: 15px;"></i>
+        <h2 style="font-size: 1.8rem;">بوابة المواطنين</h2>
+        <a href="https://discord.gg/5ejAfY2ex4" target="_blank" class="discord-btn">انضم إلينا الآن</a>
+    </section>
 
-  <div class="rule-card">
-    <div class="rule-header">
-      <span class="rule-text">الميتا جيمنج - Metagaming</span>
-      <button class="rule-toggle">+</button>
-    </div>
-    <div class="rule-content">
-      استخدام معلومات حصلت عليها من خارج اللعبة (مثلاً من بث مباشر، ديسكورد، يوتيوب) داخل اللعبة يعتبر مخالفة. المعلومات يجب أن تكون متوفرة فقط لشخصيتك داخل اللعبة.
-    </div>
-  </div>
+    <script>
+        function toggleMenu() { document.getElementById('menu').classList.toggle('active'); }
+        function showSection(id) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            if(document.getElementById('menu').classList.contains('active')) toggleMenu();
+        }
 
-  <div class="rule-card">
-    <div class="rule-header">
-      <span class="rule-text">القتل العشوائي - RDM (Random Death Match)</span>
-      <button class="rule-toggle">+</button>
-    </div>
-    <div class="rule-content">
-      قتل الأشخاص بلا سبب أو تهديد مسبق، أو بطريقة عشوائية، يعتبر مخالفة واضحة. يجب احترام حياة الشخصيات الأخرى في اللعبة.
-    </div>
-  </div>
+        // أنيميشن التأرجح ثلاثي الأبعاد (3D Tilt)
+        function processTilt(event, element) {
+            if (window.innerWidth < 768) return; // تعطيل على الجوال للحفاظ على الأبعاد
 
-  <div class="rule-card">
-    <div class="rule-header">
-      <span class="rule-text">قانون تقدير الحياة - NWL (New World Life)</span>
-      <button class="rule-toggle">+</button>
-    </div>
-    <div class="rule-content">
-      الحفاظ على حياتك وحياة الآخرين واجب أساسي. لا تهدد أو تستهين بحياة الآخرين. لا تقاوم مجرم أو شرطي مسلح إلا عند الضرورة. يجب التفاوض وحل النزاعات بالكلام قبل أي عمل يعرض حياة الآخرين للخطر.
-    </div>
-  </div>
+            const cardRect = element.getBoundingClientRect();
+            const cardWidth = cardRect.width;
+            const cardHeight = cardRect.height;
+            const centerX = cardRect.left + cardWidth / 2;
+            const centerY = cardRect.top + cardHeight / 2;
+            const mouseX = event.clientX - centerX;
+            const mouseY = event.clientY - centerY;
 
-  <div class="rule-card">
-    <div class="rule-header">
-      <span class="rule-text">الاتفاقيات خارج الرول بلاي</span>
-      <button class="rule-toggle">+</button>
-    </div>
-    <div class="rule-content">
-      أي اتفاق يتم خارج اللعبة (مثل الديسكورد أو خارجه) لتسهيل أحداث داخل اللعبة يعتبر مخالف ويمنع تطبيقه.
-    </div>
-  </div>
+            // حساب زوايا الدوران (أقصى دوران 10 درجات)
+            const rotateX = (-1 * (mouseY / (cardHeight / 2)) * 10).toFixed(2);
+            const rotateY = ((mouseX / (cardWidth / 2)) * 10).toFixed(2);
 
-  <div class="rule-card">
-    <div class="rule-header">
-      <span class="rule-text">الإهانة للشخص المسقط</span>
-      <button class="rule-toggle">+</button>
-    </div>
-    <div class="rule-content">
-      يمنع تمامًا إهانة أي لاعب تم إسقاطه أو فقد وعيه خلال اللعبة. الاحترام واجب دائمًا.
-    </div>
-  </div>
+            // تطبيق التحويل
+            element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        }
 
-  <div class="rule-card">
-    <div class="rule-header">
-      <span class="rule-text">بناء شخصية حقيقية - Roleplay Character</span>
-      <button class="rule-toggle">+</button>
-    </div>
-    <div class="rule-content">
-      يجب على كل لاعب بناء شخصية فريدة له، وتمثيلها بجدية في الأقوال والأفعال داخل اللعبة، مع الالتزام بالواقعية والخيال المنطقي.
-    </div>
-  </div>
-
-  <div class="rule-card">
-    <div class="rule-header">
-      <span class="rule-text">ملفات أو أدوات مضرة باللعب</span>
-      <button class="rule-toggle">+</button>
-    </div>
-    <div class="rule-content">
-      يحظر استخدام أي ملفات أو أدوات تؤثر سلبًا على اللعب أو تمنح ميزات غير قانونية. كل استخدام يعتبر مخالفة ويعاقب عليها النظام.
-    </div>
-  </div>
-
-</div>
-
-<script src="script.js"></script>
+        function resetTilt(element) {
+            // إعادة البطاقة لوضعها الطبيعي بنعومة
+            element.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        }
+    </script>
 </body>
 </html>
